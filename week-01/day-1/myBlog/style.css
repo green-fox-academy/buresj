@@ -1,0 +1,68 @@
+body {
+    font-family: 'Open sans', Courier, monospace;
+    margin: 0; 
+}
+
+.header {
+    background: #5c9ead;
+    border: 1px #326273 dotted;
+    height: 50px;
+}
+
+h1 {
+    font-size: 22px;
+    margin-left: 50px; 
+}
+
+h2 {
+    font-weight: bold;
+}
+
+main {
+    padding-left: 50px;
+    padding-right: 100px; 
+    background: #deffdd;
+    width: 800px;
+    position: relative;    
+}
+
+.button {
+    border-radius: 15px 15px 15px 15px;
+    height: 30px;
+    width: 120px;
+    font-weight: bold;
+}
+
+.posts {
+    border: 1px black solid;
+    height: 150px;
+    width: 800px;
+    margin-top: 30px;
+    padding: 5px;
+    background-image: url(https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg);
+    color: white;
+    border: 1px purple solid
+}
+
+.sideBar {
+    margin-left: 900px;
+    border: 3px black solid;
+    padding: 3px;
+    width: 150px;
+    height: 400px;
+    position: absolute;
+}
+
+.bottom {
+    margin-top: 30px;
+    background: black;
+    height: 200px;
+    padding-top: 40px;
+}
+
+.address {
+    height: 80px;
+    width: 80px;
+    margin-left: 100px;
+    color: antiquewhite;
+}
