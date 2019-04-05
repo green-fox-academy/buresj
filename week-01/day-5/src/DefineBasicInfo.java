@@ -12,6 +12,7 @@ public class DefineBasicInfo {
         double height = 1.8;
         boolean married = true;
 
+        System.out.println("Name: " + name);
         System.out.println("Name: " + age);
         System.out.println("Height:" + height);
         System.out.println("Married: " + married);

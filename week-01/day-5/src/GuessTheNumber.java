@@ -19,19 +19,15 @@ public class GuessTheNumber {
 
             Scanner scanner = new Scanner(System.in);
             System.out.println("Guess my number: ");
+
             int inputNum = scanner.nextInt();
 
             if (inputNum == number) {
-
                 System.out.print("You have guessed it right!");
                 guess = true;
-
             }
-
         }
-
     }
-
 }
 
 

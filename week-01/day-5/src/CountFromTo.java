@@ -37,6 +37,5 @@ public class CountFromTo {
                 System.out.println(numOne + i);
             }
         }
-
     }
 }

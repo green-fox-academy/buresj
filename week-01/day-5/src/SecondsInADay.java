@@ -1,3 +1,9 @@
+// int hoursInDay = 24;
+// int minutesInHour = 60;
+// int secondsInMinute = 42;
+// Write a program that prints the remaining seconds (as an integer) from a
+// day if the current time is represented by the variables
+
 public class SecondsInADay {
     public static void main(String[] args) {
         int currentHours = 14;
@@ -12,16 +18,5 @@ public class SecondsInADay {
 
         System.out.println((currentSeconds *= -1) + (-3600 * currentHours) + (-60 * currentMinutes));
         System.out.println(currentSeconds);
-
-        // int hoursInDay = 24;
-        // int minutesInHour = 60;
-        // int secondsInMinute = 42;
-
-        // System.out.println((hoursInDay-currentHours) + "H" + (minutesInHour - currentMinutes) + "M" + (secondsInMinute - currentSeconds) + "S");
-
-        //
-
-        // Write a program that prints the remaining seconds (as an integer) from a
-        // day if the current time is represented by the variables
     }
 }

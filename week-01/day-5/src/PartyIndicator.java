@@ -1,45 +1,6 @@
-import java.util.Scanner;
-
-public class PartyIndicator {
-
-        public static void main(String[] args) {
-
-            // Write a program that asks for two numbers
-
-            Scanner scanner = new Scanner(System.in);
-
-            // The first number represents the number of girls that comes to a party, the
-            // second the boys.
-
-            System.out.println("Give me number of boys that comes to a party: ");
-            int boysTotal = scanner.nextInt();
-
-            System.out.println("Give me number of girls that comes to a party:: ");
-            int girlsTotal = scanner.nextInt();
-
-            int sum = boysTotal + girlsTotal;
-            boolean equality = girlsTotal == boysTotal;
-
-            if (sum >= 20 && equality) {
-
-                System.out.println("The party is excellent!");
-            }
-
-            else if (sum >= 20 && girlsTotal >= 1) {
-
-                System.out.println("Quite cool party!");
-            }
-
-            else if (sum < 20) {
-
-                System.out.println("Average party...");
-            }
-
-            else if (girlsTotal == 0) {
-
-                System.out.println("Sausage party");
-            }
-
+// Write a program that asks for two numbers
+// The first number represents the number of girls that comes to a party, the
+// second the boys.
 // It should print: The party is excellent!
 // If the number of girls and boys are equal and 20 or more people are coming to the party
 //
@@ -52,6 +13,35 @@ public class PartyIndicator {
 // It should print: Sausage party
 // If no girls are coming, regardless the count of the people
 
-        }
+import java.util.Scanner;
 
+public class PartyIndicator {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Give me number of boys that comes to a party: ");
+        int boysTotal = scanner.nextInt();
+
+        System.out.println("Give me number of girls that comes to a party:: ");
+        int girlsTotal = scanner.nextInt();
+
+        int sum = boysTotal + girlsTotal;
+        boolean equality = girlsTotal == boysTotal;
+
+        if (sum >= 20 && equality) {
+
+            System.out.println("The party is excellent!");
+        } else if (sum >= 20 && girlsTotal >= 1) {
+
+            System.out.println("Quite cool party!");
+        } else if (sum < 20) {
+
+            System.out.println("Average party...");
+        } else if (girlsTotal == 0) {
+
+            System.out.println("Sausage party");
+        }
+    }
 }

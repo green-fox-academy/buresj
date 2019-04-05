@@ -21,16 +21,12 @@ public class MultiplicationTable {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Give me number and I make its multiplication table: ");
         int numInput = scanner.nextInt();
 
         for (int i = 1; i <= 10; i++) {
-
-            int result = i * numInput;
-
+            int result = i * numInput ;
             System.out.println(i + " * " + numInput + " = " + result);
-
         }
     }
 }

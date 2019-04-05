@@ -7,6 +7,5 @@ public class IWontCheatOnTheExams {
         for (int i = 0; i < 100 ; i++) {
             System.out.println("I won't cheat on the exam!");
         }
-
     }
 }
