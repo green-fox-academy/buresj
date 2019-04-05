@@ -12,10 +12,33 @@
 // 4
 // 5
 
+import java.util.Scanner;
+
 public class CountFromTo {
 
     public static void main(String[] args) {
 
-    }
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Give me first number ");
+        int numOne = scanner.nextInt();
+
+        System.out.println("Give me second number ");
+        int numTwo = scanner.nextInt();
+
+        if (numOne > numTwo) {
+            System.out.println("The second number should be bigger");
+        }
+
+        else{
+
+            int dif = numTwo - numOne;
+
+            for (int i = 0; i < dif; i++) {
+
+                System.out.println(numOne + i);
+            }
+        }
+
     }
 }
