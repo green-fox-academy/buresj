@@ -19,20 +19,14 @@ public class OneTwoALot {
 
             System.out.println("Not enough");
 
-        }
-
-        else if (numberIn == 1){
+        } else if (numberIn == 1) {
 
             System.out.println("One");
 
-        }
-
-        else if (numberIn == 2){
+        } else if (numberIn == 2) {
 
             System.out.println("Two");
-        }
-
-        else {
+        } else {
 
             System.out.println("A lot");
         }

@@ -28,9 +28,7 @@ public class CountFromTo {
 
         if (numOne > numTwo) {
             System.out.println("The second number should be bigger");
-        }
-
-        else{
+        } else {
 
             int dif = numTwo - numOne;
 

@@ -10,10 +10,10 @@
 public class CodingHours {
     public static void main(String[] args) {
 
-        System.out.println("An average Green Fox attendee coded " + 6*7*17 + " hours");
+        System.out.println("An average Green Fox attendee coded " + 6 * 7 * 17 + " hours");
 
-        System.out.println(6*5*17);
+        System.out.println(6 * 5 * 17);
 
-        System.out.println(6.*5./52.*100);
+        System.out.println(6. * 5. / 52. * 100);
     }
 }

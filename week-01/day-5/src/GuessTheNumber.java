@@ -15,7 +15,6 @@ public class GuessTheNumber {
         int number = 5;
         boolean guess = false;
 
-
         while (!guess) {
 
             Scanner scanner = new Scanner(System.in);
@@ -25,19 +24,14 @@ public class GuessTheNumber {
             if (inputNum == number) {
 
                 System.out.print("You have guessed it right!");
-
                 guess = true;
-
 
             }
 
-
         }
-
-
-        }
-
 
     }
+
+}
 
 

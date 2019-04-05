@@ -16,20 +16,13 @@ public class FizzBuzz {
 
             if (fizz == 0 && buzz == 0) {
                 System.out.println("FizzBuzz");
-            }
-
-            else if (fizz == 0) {
+            } else if (fizz == 0) {
 
                 System.out.println("Fizz");
-            }
-
-            else if (buzz == 0) {
+            } else if (buzz == 0) {
 
                 System.out.println("Buzz");
-            }
-
-
-            else {
+            } else {
                 System.out.println(i);
             }
         }

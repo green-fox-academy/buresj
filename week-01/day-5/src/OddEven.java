@@ -13,9 +13,7 @@ public class OddEven {
         if (numberIn == 0) {
 
             System.out.println("Even!");
-        }
-
-        else {
+        } else {
 
             System.out.println("Odd!");
         }

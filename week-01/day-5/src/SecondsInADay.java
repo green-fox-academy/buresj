@@ -6,10 +6,12 @@ public class SecondsInADay {
 
         currentHours -= 24;
         currentMinutes -= 60;
-        currentSeconds -= 42;
+        currentSeconds -= 60;
+
+        System.out.println(currentSeconds);
 
         System.out.println((currentSeconds *= -1) + (-3600 * currentHours) + (-60 * currentMinutes));
-
+        System.out.println(currentSeconds);
 
         // int hoursInDay = 24;
         // int minutesInHour = 60;

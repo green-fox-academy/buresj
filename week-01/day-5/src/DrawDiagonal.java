@@ -19,22 +19,8 @@ public class DrawDiagonal {
         System.out.println("Give me number: ");
         int num = scanner.nextInt();
 
-        String empty = " ";
+        System.out.print("*");
 
-        for (float line = 1; line <= num; line++) {
-
-                boolean lastLine = num == line;
-
-            for (int point = 1; point <= num; point++) {
-
-                if (line == 1 || lastLine) {
-                    System.out.print("*");
-                }
-
-                }
-            }
-
-            System.out.println();
 
         }
     }
