@@ -26,15 +26,5 @@ public class DrawTriangle {
 
             System.out.println();
         }
-
-        /*
-        for (int i = 1; i <= num; i++) {
-
-            for (int j = 0; j <= num ; j++) {
-                System.out.print("*");
-            }
-
-        }
-*/
     }
 }
