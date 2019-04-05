@@ -18,11 +18,9 @@ public class DrawTriangle {
         System.out.println("Give me number and I make triangle from it: ");
         int num = scanner.nextInt();
 
-        for (int i = 0; i <= num; i++) {
+        for (int i = 1; i <= num; i++) {
 
-            i += 1;
-
-            for (int j = 0; j <= i; j++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
 
