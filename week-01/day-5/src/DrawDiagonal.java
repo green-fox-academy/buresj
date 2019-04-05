@@ -24,19 +24,12 @@ public class DrawDiagonal {
         for (float line = 1; line <= num; line++) {
 
                 boolean lastLine = num == line;
-               // boolean middle = ((num /= 2) == (line /= 2)) ? true : false;
 
             for (int point = 1; point <= num; point++) {
 
                 if (line == 1 || lastLine) {
                     System.out.print("*");
                 }
-
-                else {
-
-                    for (int i = 0; i < ; i++) {
-
-                    }
 
                 }
             }
@@ -45,4 +38,4 @@ public class DrawDiagonal {
 
         }
     }
-}
+

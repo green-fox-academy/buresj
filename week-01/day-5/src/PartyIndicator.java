@@ -25,17 +25,17 @@ public class PartyIndicator {
                 System.out.println("The party is excellent!");
             }
 
-            if (sum >= 20 && girlsTotal >= 1) {
+            else if (sum >= 20 && girlsTotal >= 1) {
 
                 System.out.println("Quite cool party!");
             }
 
-            if (sum < 20) {
+            else if (sum < 20) {
 
                 System.out.println("Average party...");
             }
 
-            if (girlsTotal == 0) {
+            else if (girlsTotal == 0) {
 
                 System.out.println("Sausage party");
             }
