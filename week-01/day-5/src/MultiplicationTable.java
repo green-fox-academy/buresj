@@ -29,7 +29,7 @@ public class MultiplicationTable {
 
             int result = i * numInput;
 
-            System.out.println(i + "*" + numInput + " = " + result);
+            System.out.println(i + " * " + numInput + " = " + result);
 
         }
     }
