@@ -21,25 +21,25 @@ public class DrawChessTable {
 
         for (int row = 1; row <= num; row++) {
 
-                for (int column = 1; column <= num; column++) {
+            for (int column = 1; column <= num; column++) {
 
-                    float testColumn = column;
-                    float testRow = row;
+                float testColumn = column;
+                float testRow = row;
 
-                    boolean evenColumn = (testColumn %= 2) == 0;
-                    boolean evenRow = (testRow %= 2) == 0;
+                boolean evenColumn = (testColumn %= 2) == 0;
+                boolean evenRow = (testRow %= 2) == 0;
 
-                    if (evenRow) {
-                        if (evenColumn) {
-                            System.out.print("%");
-                        } else {
-                            System.out.print(" ");
-                        }
-                    }else {
-                        if (!evenColumn) {
-                            System.out.print("%");
-                        }else {
-                            System.out.print(" ");
+                if (evenRow) {
+                    if (evenColumn) {
+                        System.out.print("%");
+                    } else {
+                        System.out.print(" ");
+                    }
+                } else {
+                    if (!evenColumn) {
+                        System.out.print("%");
+                    } else {
+                        System.out.print(" ");
                     }
                 }
             }
