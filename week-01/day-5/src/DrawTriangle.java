@@ -29,7 +29,7 @@ public class DrawTriangle {
             System.out.println();
         }
 
-        for (int row = 1; row <= num; row++) {
+        for (int row = 0; row <= num; row++) {
             size--;
 
             for (int column = 0; column <= size; column++) {
