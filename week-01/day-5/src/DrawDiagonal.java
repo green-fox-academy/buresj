@@ -19,9 +19,28 @@ public class DrawDiagonal {
         System.out.println("Give me number: ");
         int num = scanner.nextInt();
 
-        System.out.print("*");
+        for (int row = 1; row <= num; row++) {
+            boolean lastRow = num == row;
 
+            for (int column = 1; column <= num; column++) {
+                boolean lastColumn = num == column;
 
+                if (row == 1 || lastRow) {
+                    System.out.print("*");
+                } else if (column == 1 || lastColumn) {
+                    System.out.print("*");
+                } else if (column == row) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
         }
     }
+}
+
+
+
+
 
