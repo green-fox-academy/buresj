@@ -5,6 +5,7 @@
 //
 // Sum: 22, Average: 4.4
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class ParametricAverage {
@@ -14,10 +15,9 @@ public class ParametricAverage {
         Scanner scanner = new Scanner(System.in);
 
         int counter;
-
-        int first = 0;
-        int second = 0;
-        int third = 0;
+        float first = 0;
+        float second = 0;
+        float third = 0;
 
         for (counter = 0; counter < 3; counter++) {
 
@@ -36,10 +36,12 @@ public class ParametricAverage {
             }
         }
 
-        int sum = first + second + third;
+        float sum = first + second + third;
         float average = sum / counter;
 
-        System.out.print("Sum: " + sum + ", average: " + average);
+        DecimalFormat numberFormat = new DecimalFormat("#.00");
+
+        System.out.print("Sum: " + sum + ", average: " + numberFormat.format(average));
     }
 }
 
