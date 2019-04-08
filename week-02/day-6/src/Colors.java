@@ -35,7 +35,5 @@ public class Colors {
         colors[2][2] = "violet";
         colors[2][3] = "pink";
         colors[2][4] = "hot pink";
-
-
     }
 }
