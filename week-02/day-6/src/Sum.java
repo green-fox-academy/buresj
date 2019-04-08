@@ -16,8 +16,6 @@ public class Sum {
 
             y += i;
         }
-
         return y;
     }
-
 }
