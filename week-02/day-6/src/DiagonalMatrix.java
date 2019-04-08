@@ -28,7 +28,7 @@ public class DiagonalMatrix {
 
                 System.out.print(table[x][y]);
             }
-            
+
             System.out.println();
         }
     }
