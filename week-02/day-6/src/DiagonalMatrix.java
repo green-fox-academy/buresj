@@ -9,6 +9,7 @@
 // - Print this two dimensional array to the output
 
 public class DiagonalMatrix {
+
     public static void main(String[] args) {
 
         int table[][] = new int[4][4];
