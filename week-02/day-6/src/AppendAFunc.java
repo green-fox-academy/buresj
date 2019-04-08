@@ -18,7 +18,7 @@ public class AppendAFunc {
     }
 
     public static String appendAFunc (String input) {
-        
+
         return input += "a";
     }
 }
