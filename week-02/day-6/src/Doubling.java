@@ -3,6 +3,7 @@
 // - Print the result of `doubling(baseNum)`
 
 public class Doubling {
+
     public static void main(String[] args) {
 
         int baseNum = 123;

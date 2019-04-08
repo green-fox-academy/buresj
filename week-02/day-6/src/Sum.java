@@ -2,6 +2,7 @@
 // Write a function called `sum` that returns the sum of numbers from zero to the given parameter
 
 public class Sum {
+
     public static void main(String[] args) {
 
         int num = 2;
