@@ -6,7 +6,7 @@ public class SubInt {
 
     public static void main(String[] args) {
 
-        int[] array = {1,2,4,4,5,6};
+        int[] array = {1, 2, 4, 4, 5, 6};
         int num = 4;
 
         int[] results = finder(array, num);
@@ -15,10 +15,9 @@ public class SubInt {
 
             System.out.print(results[i] + ", ");
         }
-
     }
-    
-    public static int[] finder (int[] testedArray, int testedNum) {
+
+    public static int[] finder(int[] testedArray, int testedNum) {
 
         int[] results = new int[testedArray.length];
         int j = 0;
