@@ -11,29 +11,17 @@
 public class Colors {
     public static void main(String[] args) {
 
-//        String shadesOfGreen[] = {"lime", "forest green", "olive", "pale green", "spring green"};
-//        String shadesOfRed[] = {"orange red", "red", "tomato"};
-//        String shadesOfPink[] = {"orchid", "violet", "pink", "hot pink"};
+        String colors[][] = {{"lime", "forest green", "olive", "pale green", "spring green"},
+               {"orange red", "red", "tomato"},{"orchid","violet","hot pink"}};
 
-        String colors[][] = new String[2][5];
+        for (int i = 0; i < colors.length; i++) {
 
-        colors[0][0] = "green";
-        colors[1][0] = "red";
-        colors[2][0] = "pink";
+            for (int j = 0; j < colors.length; j++) {
 
-        colors[0][1] = "lime";
-        colors[0][2] = "fores green";
-        colors[0][3] = "olive";
-        colors[0][4] = "pale green";
-        colors[0][5] = "spring";
+                System.out.print(colors[i][j] + " ");
+            }
 
-        colors[1][1] = "orange red";
-        colors[1][2] = "red";
-        colors[1][3] = "tomato";
-
-        colors[2][1] = "orchid";
-        colors[2][2] = "violet";
-        colors[2][3] = "pink";
-        colors[2][4] = "hot pink";
+            System.out.println();
+        }
     }
 }
