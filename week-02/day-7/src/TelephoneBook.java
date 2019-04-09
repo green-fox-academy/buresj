@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,11 +15,16 @@ public class TelephoneBook {
 
         System.out.println(book.get("John K. Miller"));
 
+        isSomebodyThere("Hortensia E. Foster", book);
+    }
+
+    public static void isSomebodyThere (String input, HashMap<String, String> inputBook) {
+
         boolean chris = false;
 
-        for (Map.Entry<String, String> name : book.entrySet()) {
+        for (Map.Entry<String, String> name : inputBook.entrySet()) {
 
-            if (name.getValue() == "Chris E. Myers") {
+            if (name.getKey() == input) {
                 chris = true;
             }else{
                 chris = false;
