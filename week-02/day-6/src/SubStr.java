@@ -8,4 +8,8 @@ public class SubStr {
 
     }
 
+//    public static String compare (String one, String two) {
+//
+//    }
+
 }
