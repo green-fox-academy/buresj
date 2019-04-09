@@ -7,18 +7,17 @@ public class Reverse {
         String reversed = ".eslaf eb t'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI";
 
         System.out.println(reverse(reversed));
-
     }
 
     public static String reverse (String input) {
 
         int j = 0;
-        String result = "";
+        String reversedInput = "";
 
         for (int i = input.length() - 1; i >= 0; i--) {
-            result += input.charAt(i);
+            reversedInput += input.charAt(i);
             j++;
         }
-        return result;
+        return reversedInput;
     }
 }
