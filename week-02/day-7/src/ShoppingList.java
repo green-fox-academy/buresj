@@ -9,6 +9,7 @@ public class ShoppingList {
         isItInList("milk",shopList);
     }
 
+
     public static void isItInList (String input, ArrayList<String> inputList){
 
         boolean checker = false;

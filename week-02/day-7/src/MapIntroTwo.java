@@ -14,6 +14,7 @@ public class MapIntroTwo {
         for (Map.Entry<String, String> value : map.entrySet()) {
             System.out.println(value.getValue() + "(ISBN: "+ value.getKey());
         }
+
         map.remove("978-1-60309-444-3");
         map.values().remove("The Lab");
 
