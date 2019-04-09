@@ -12,7 +12,7 @@ public class MapIntroTwo {
         map.put("978-1-60309-461-0","The Lab");
 
         for (Map.Entry<String, String> value : map.entrySet()) {
-            System.out.println(value.getValue() + "(ISBN: "+ value.getKey());
+            System.out.println(value.getValue() + "(ISBN: "+ value.getKey() + ")");
         }
 
         map.remove("978-1-60309-444-3");
