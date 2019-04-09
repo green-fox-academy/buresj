@@ -3,13 +3,13 @@
 // Try to solve this using charAt() first, and optionally anything else after.
 
 public class Reverse {
-    public static void main(String... args){
+    public static void main(String... args) {
         String reversed = ".eslaf eb t'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI";
 
         System.out.println(reverse(reversed));
     }
 
-    public static String reverse (String input) {
+    public static String reverse(String input) {
 
         int j = 0;
         String reversedInput = "";
