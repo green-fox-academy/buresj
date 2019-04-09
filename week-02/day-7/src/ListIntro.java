@@ -60,14 +60,11 @@ public class ListIntro {
 
         names.remove(1);
 
-        for (int i = names.size(); i <= 0; i--) {
+        for (int i = names.size() - 1; i < 0; i--) {
             System.out.println(names.get(i));
         }
 
         names.clear();
-
-
-
 
     }
 }
