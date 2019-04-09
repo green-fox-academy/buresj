@@ -7,16 +7,30 @@ public class PersonalFinance {
 
         ArrayList<Integer> budget = new ArrayList<>(Arrays.asList(500, 1000, 1250, 175, 800, 120));
 
-        int sum = 0;
+        sum(budget);
+        lowest(budget);
+        avarage(budget);
+    }
 
-        for (int items: budget) {
+    public static void sum(ArrayList<Integer> inputList) {
+        int sum = 0;
+        for (int items : inputList) {
             sum += items;
         }
-        System.out.println("We have spent: " + sum);
+       System.out.println("We have spent: " + sum);
+    }
 
-        Collections.sort(budget);
-        System.out.println("Lowest spending: " + budget.get(0));
+    public static void lowest(ArrayList<Integer> inputList) {
 
-        System.out.println("Average spending for an item: " + sum/budget.size());
+        Collections.sort(inputList);
+        System.out.println("Lowest spending: " + inputList.get(0));
+     }
+
+    public static void avarage(ArrayList<Integer> inputList) {
+        int sumTwo = 0;
+        for (int items : inputList) {
+            sumTwo+= items;
+        }
+        System.out.println("Average spending for an item: " + sumTwo / inputList.size());
     }
 }
