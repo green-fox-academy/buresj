@@ -17,19 +17,19 @@ public class PersonalFinance {
         for (int items : inputList) {
             sum += items;
         }
-       System.out.println("We have spent: " + sum);
+        System.out.println("We have spent: " + sum);
     }
 
     public static void lowest(ArrayList<Integer> inputList) {
 
         Collections.sort(inputList);
         System.out.println("Lowest spending: " + inputList.get(0));
-     }
+    }
 
     public static void avarage(ArrayList<Integer> inputList) {
         int sumTwo = 0;
         for (int items : inputList) {
-            sumTwo+= items;
+            sumTwo += items;
         }
         System.out.println("Average spending for an item: " + sumTwo / inputList.size());
     }

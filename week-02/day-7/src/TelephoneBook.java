@@ -15,26 +15,37 @@ public class TelephoneBook {
 
         System.out.println(book.get("John K. Miller"));
 
-        isSomebodyThere("Hortensia E. Foster", book);
+        whoseNumberItIs("307-687-2982", book);
+        isSomebodyThere("Chris E. Myers'", book);
     }
 
-    public static void isSomebodyThere (String input, HashMap<String, String> inputBook) {
+    public static void isSomebodyThere(String input, HashMap<String, String> inputBook) {
 
-        boolean chris = false;
+        boolean checker = false;
 
         for (Map.Entry<String, String> name : inputBook.entrySet()) {
 
             if (name.getKey() == input) {
-                chris = true;
-            }else{
-                chris = false;
+                checker = true;
+            } else {
+                checker = false;
             }
         }
 
-        if(chris) {
-            System.out.println("He is here.");
-        }else {
-            System.out.println("He is not here.");
+        if (checker) {
+            System.out.println("He or she is in the book.");
+        } else {
+            System.out.println("He or she is not in the book.");
+        }
+    }
+
+    public static void whoseNumberItIs (String input, HashMap<String,String> inputBook) {
+
+        for (Map.Entry<String, String> name : inputBook.entrySet()) {
+
+           if(name.getValue() == input) {
+               System.out.println(name.getKey());
+           }
         }
     }
 }
