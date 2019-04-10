@@ -5,12 +5,9 @@ import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Checkerboard {
+
     public static void mainDraw(Graphics graphics) {
         // Fill the canvas with a checkerboard pattern.
-
-        int size = 10;
-        int positionY = 0;
-        int positionX = 0;
 
 
         for (int row = 0; row <= WIDTH; row++) {
@@ -23,28 +20,31 @@ public class Checkerboard {
                 boolean evenColumn = (testColumn %= 2) == 0;
                 boolean evenRow = (testRow %= 2) == 0;
 
+
                 if (evenRow) {
                     if (evenColumn) {
-                        graphics.setColor(Color.black);
-                        graphics.fillRect(
-                                row * size,
-                                column * size,
-                                size, size);
+                        miniRect(graphics, row, column);
                     }
                 } else {
                     if (!evenColumn) {
-                        graphics.setColor(Color.black);
-                        graphics.fillRect(
-                                row * size,
-                                column * size,
-                                size, size);
+                        miniRect(graphics, row, column);
                     }
                 }
-
             }
-
         }
     }
+
+    public static void miniRect(Graphics g, int row, int column) {
+
+        int size = 10;
+
+        g.setColor(Color.black);
+        g.fillRect(
+                row * size,
+                column * size,
+                size, size);
+    }
+
 
     // Don't touch the code below
     static int WIDTH = 320;
