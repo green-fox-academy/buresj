@@ -13,11 +13,8 @@ public class RainbowBoxFunction {
 
 
         for (int i = 0; i < WIDTH; i++) {
-
             for (int j = 0; j < HEIGHT; j++) {
-
                 Color color = new Color((int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math.random() * 256));
-
                 rainbowing(graphics, 10, color, i, j);
             }
         }
