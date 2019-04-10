@@ -17,11 +17,9 @@ public class PurpleSteps3d {
             graphics.fillRect(0,0, 10,10);
 
             size *= 2;
+
             graphics.setColor(new Color(111, 0, 156));
             graphics.fillRect(position, position, size, size);
-
-            graphics.setColor(new Color(53, 0, 76));
-            graphics.drawRect(position - 1, position - 1, size + 1, size + 1);
 
             position += size;
         }

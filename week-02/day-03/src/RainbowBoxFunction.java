@@ -14,15 +14,20 @@ public class RainbowBoxFunction {
 
         for (int i = 0; i < WIDTH; i++) {
             for (int j = 0; j < HEIGHT; j++) {
-                Color color = new Color((int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math.random() * 256));
-                rainbowing(graphics, 10, color, i, j);
+                Color color = new Color(
+                        (int) (Math.random() * 256),
+                        (int) (Math.random() * 256),
+                        (int) (Math.random() * 256));
+                rainbow(graphics, 5, color,
+                        (int) (Math.random()*WIDTH),
+                        (int) (Math.random()*HEIGHT));
             }
         }
     }
 
-    public static void rainbowing(Graphics g, int x, Color color, int a, int b) {
+    public static void rainbow(Graphics g, int x, Color color, int a, int b) {
         g.setColor(color);
-        g.drawRect(a, b, x, x);
+        g.fillRect(a, b, x, x);
     }
 
     // Don't touch the code below

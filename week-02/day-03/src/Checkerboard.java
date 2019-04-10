@@ -8,19 +8,43 @@ public class Checkerboard {
     public static void mainDraw(Graphics graphics) {
         // Fill the canvas with a checkerboard pattern.
 
-        int size = WIDTH/10;
-        int position = 0;
+        int size = 10;
+        int positionY = 0;
+        int positionX = 0;
 
-        for (int row = 0; row <= size; row += size/10) {
 
-            for (int column = 0; column < size; column += size/10) {
+        for (int row = 0; row <= WIDTH; row++) {
 
-                graphics.drawRect(position + column, position + row, size, size);
-                position += size;
+            for (int column = 0; column <= HEIGHT; column++) {
+
+                float testColumn = column;
+                float testRow = row;
+
+                boolean evenColumn = (testColumn %= 2) == 0;
+                boolean evenRow = (testRow %= 2) == 0;
+
+                if (evenRow) {
+                    if (evenColumn) {
+                        graphics.setColor(Color.black);
+                        graphics.fillRect(
+                                row * size,
+                                column * size,
+                                size, size);
+                    }
+                } else {
+                    if (!evenColumn) {
+                        graphics.setColor(Color.black);
+                        graphics.fillRect(
+                                row * size,
+                                column * size,
+                                size, size);
+                    }
+                }
+
             }
+
         }
     }
-
 
     // Don't touch the code below
     static int WIDTH = 320;
