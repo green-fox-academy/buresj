@@ -11,15 +11,14 @@ public class ToCenter {
         // and draws a line from that point to the center of the canvas.
         // Draw 3 lines with that function. Use loop for that.
 
-        for (int i = 0; i <= 3; i++) {
-            centerIt(graphics, 1, 1 + i);
+        for (int i = 0; i <= 100; i++) {
+            centerIt(graphics, i, i );
         }
     }
 
     public static void centerIt(Graphics g, int x, int y) {
 
-        y *= 10;
-        g.drawLine(x, y, WIDTH / 2, HEIGHT / 2);
+        g.drawLine(x *=2, y *= 3, WIDTH / 2, HEIGHT / 2);
     }
 
     // Don't touch the code below

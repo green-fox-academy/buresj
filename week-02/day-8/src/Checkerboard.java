@@ -4,16 +4,23 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PurpleSteps {
+public class Checkerboard {
     public static void mainDraw(Graphics graphics) {
-        // Reproduce this:
-        // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
+        // Fill the canvas with a checkerboard pattern.
 
-        for (int i = 1; i <= 10; i++) {
-            graphics.setColor(new Color(111, 0, 156));
-            graphics.fillRect(10 * i, 10 * i, 10, 10);
+        int size = WIDTH/10;
+        int position = 0;
+
+        for (int row = 0; row <= size; row += size/10) {
+
+            for (int column = 0; column < size; column += size/10) {
+
+                graphics.drawRect(position + column, position + row, size, size);
+                position += size;
+            }
         }
     }
+
 
     // Don't touch the code below
     static int WIDTH = 320;
