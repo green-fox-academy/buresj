@@ -4,13 +4,28 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class CenteredSquare {
-
+public class RainbowBoxFunction {
     public static void mainDraw(Graphics graphics) {
-        // Draw a green 10x10 square to the canvas' center.
+        // Create a square drawing function that takes 3 parameters:
+        // The square size, the fill color, graphics
+        // and draws a square of that size and color to the center of the canvas.
+        // Create a loop that fills the canvas with rainbow colored squares.
 
-        graphics.setColor(Color.green);
-        graphics.drawRect(WIDTH / 2 - 10, HEIGHT / 2 - 10, 10, 10);
+
+        for (int i = 0; i < WIDTH; i++) {
+
+            for (int j = 0; j < HEIGHT; j++) {
+
+                Color color = new Color((int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math.random() * 256));
+
+                rainbowing(graphics, 10, color, i, j);
+            }
+        }
+    }
+
+    public static void rainbowing(Graphics g, int x, Color color, int a, int b) {
+        g.setColor(color);
+        g.drawRect(a, b, x, x);
     }
 
     // Don't touch the code below

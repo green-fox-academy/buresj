@@ -18,7 +18,7 @@ public class CenterBoxFunction {
 
     public static void superSquare(Graphics g, int x) {
 
-        g.drawRect(WIDTH / 2 - x, HEIGHT / 2, x, x);
+        g.drawRect(WIDTH / 2 - x, HEIGHT / 2 - x, x, x);
     }
 
 
