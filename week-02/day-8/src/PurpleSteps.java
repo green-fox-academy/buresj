@@ -4,15 +4,14 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FourRectangles {
+public class PurpleSteps {
+    public static void mainDraw(Graphics graphics) {
+        // Reproduce this:
+        // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
 
-    public static void mainDraw(Graphics graphics){
-        // draw four different size and color rectangles.
-        // avoid code duplication.
-
-        for (int i = 1; i <= 4; i++) {
-            graphics.setColor(new Color(30 * i,30 * i,30 * i,150));
-            graphics.drawRect(10 * i, 10 * i, 10 * i, 10 * i);
+        for (int i = 1; i <= 20; i++) {
+            graphics.setColor(new Color(111, 0, 156));
+            graphics.fillRect(10 * i, 10 * i, 10, 10);
         }
     }
 
