@@ -4,24 +4,23 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class LineInTheMiddle {
-    public static void mainDraw(Graphics graphics){
-        // draw a red horizontal line to the canvas' middle.
-        // draw a green vertical line to the canvas' middle.
+public class ColoredBox {
+    public static void mainDraw(Graphics graphics) {
+        // Draw a box that has different colored lines on each edge.
 
         graphics.setColor(Color.red);
-        graphics.drawLine(0, HEIGHT/2, WIDTH, HEIGHT/2);
+        graphics.drawLine(100, 100, 100, 150);
 
         graphics.setColor(Color.green);
-        graphics.drawLine(WIDTH/2, 0, WIDTH/2, HEIGHT);
+        graphics.drawLine(100, 100, 150, 100);
+
+        graphics.setColor(Color.blue);
+        graphics.drawLine(150, 100, 150, 150);
+
+        graphics.setColor(Color.blue);
+        graphics.drawLine(150, 100, 150, 150);
 
     }
-
-
-
-
-
-
 
     // Don't touch the code below
     static int WIDTH = 320;
