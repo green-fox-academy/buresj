@@ -14,7 +14,7 @@ public class StringsAgain {
         if (positionX == -1) {
             return text;
         } else {
-            String lessX = text.replace('x', ' ');
+            String lessX = text.substring(0, positionX) + text.substring(positionX + 1);
             return removeX(lessX);
         }
     }
