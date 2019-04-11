@@ -4,7 +4,19 @@
 
 public class SumDigits {
     public static void main(String[] args) {
-        
 
+        System.out.println(digitSum(12345));
+    }
+
+    public static int digitSum(int n) {
+
+        int counter = n;
+        n %= 10;
+
+        if (n <= 1) {
+            return 1;
+        } else {
+            return n + digitSum(counter /= 10);
+        }
     }
 }
