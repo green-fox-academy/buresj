@@ -39,13 +39,13 @@ public class TelephoneBook {
         }
     }
 
-    public static void whoseNumberItIs (String input, HashMap<String,String> inputBook) {
+    public static void whoseNumberItIs(String input, HashMap<String, String> inputBook) {
 
         for (Map.Entry<String, String> name : inputBook.entrySet()) {
 
-           if(name.getValue() == input) {
-               System.out.println(name.getKey());
-           }
+            if (name.getValue() == input) {
+                System.out.println(name.getKey());
+            }
         }
     }
 }

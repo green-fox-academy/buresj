@@ -4,45 +4,31 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Checkerboard {
+public class SquaresInSquares {
 
     public static void mainDraw(Graphics graphics) {
-        // Fill the canvas with a checkerboard pattern.
 
+//        miniRect(graphics, 0, 1);
+//        miniRect(graphics, 1, 0);
+//        miniRect(graphics, 1, 2);
+//        miniRect(graphics, 2, 1);
 
-        for (int row = 0; row <= WIDTH; row++) {
-
-            for (int column = 0; column <= HEIGHT; column++) {
-
-                float testColumn = column;
-                float testRow = row;
-
-                boolean evenColumn = (testColumn % 2) == 0;
-                boolean evenRow = (testRow %= 2) == 0;
-
-
-                if (evenRow) {
-                    if (evenColumn) {
-                        miniRect(graphics, row, column);
-                    }
-                } else if (!evenColumn) {
-
-                        miniRect(graphics, row, column);
-
-                }
-            }
-        }
+        miniRect(graphics, 10, 2,2);
     }
 
-    public static void miniRect(Graphics g, int row, int column) {
-
-        int size = 10;
+    public static int miniRect(Graphics g, int size, int x, int y) {
 
         g.setColor(Color.black);
-        g.fillRect(
-                row * size,
-                column * size,
-                size, size);
+        g.drawRect(WIDTH / x + size,
+                HEIGHT / y + size,
+                size * x,
+                size * y);
+
+        if (size == 1) {
+            return 1;
+        } else {
+            return miniRect(g, size - 1, x, y);
+        }
     }
 
 

@@ -6,16 +6,16 @@ public class ShoppingList {
 
         ArrayList<String> shopList = new ArrayList<>(Arrays.asList("eggs", "milk", "fish", "apples", "bread", "chicken"));
 
-        isItInList("milk",shopList);
+        isItInList("milk", shopList);
     }
 
 
-    public static void isItInList (String input, ArrayList<String> inputList){
+    public static void isItInList(String input, ArrayList<String> inputList) {
 
         boolean checker = false;
 
-        for (String item:
-             inputList) {
+        for (String item :
+                inputList) {
             if (item == input) {
                 checker = true;
             }
@@ -23,7 +23,7 @@ public class ShoppingList {
 
         if (checker) {
             System.out.println("It is there!");
-        }else{
+        } else {
             System.out.println("It is not there!");
         }
     }
