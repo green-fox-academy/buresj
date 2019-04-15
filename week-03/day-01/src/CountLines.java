@@ -16,7 +16,7 @@ public class CountLines {
         List<String> lines = Files.readAllLines(filePath);
 
         System.out.println(lines.size());
-    
+
         } catch (Exception e) {
             System.out.println("File is not accessible");
         }
