@@ -7,6 +7,7 @@ import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,9 +37,10 @@ public class Logs {
         return ipList;
     }
 
-    public static float printRequestRatio(String logFile) {
+    public static double printRequestRatio(String logFile) {
 
-        int counter = 0;
+        double counter = 0;
+        double size = 0;
 
         Path pathOne = Paths.get("assets/" + logFile);
         List<String> lines = new ArrayList<>();
@@ -58,7 +60,8 @@ public class Logs {
             if (line.contains("GET")) {
                 counter++;
             }
+            size++;
         }
-        return counter;
+        return size/counter;
     }
 }
