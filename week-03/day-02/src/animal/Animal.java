@@ -14,13 +14,13 @@ public class Animal {
     int thirst;
 
 
+    public Animal(){
+        this(50,50);
+    }
+
     public Animal(int hunger, int thirst) {
         this.hunger = hunger;
         this.thirst = thirst;
-    }
-
-    public Animal(){
-        this(50,50);
     }
 
     public void eat() {
