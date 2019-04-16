@@ -1,5 +1,4 @@
 import javax.swing.*;
-
 import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
@@ -15,7 +14,7 @@ public class SquaresInSquares {
 
         // pyramid(graphics, 100, 10);
 
-        fourSquares(graphics, WIDTH, WIDTH, HEIGHT);
+        fourSquares(graphics, WIDTH, HEIGHT, 10, WIDTH);
 
 //        for (int i = 10; i < 100; i += 2) {
 //
@@ -40,23 +39,22 @@ public class SquaresInSquares {
                 size * 2);
     }
 
-    public static void fourSquares(Graphics g, int size, int x, int y) {
+    public static void fourSquares(Graphics g, int x, int y, int size, int base) {
+
+        int nsize;
+        int nx;
+        int ny;
 
         g.setColor(Color.black);
-        g.drawRect(WIDTH / 3 - size,
-                HEIGHT / 3 - size,
-                size,
-                size);
 
         if (size >= 1) {
 
-            fourSquares(g, size / 3, x - size / 3, 0);
-            fourSquares(g, size / 3, x - size / 3, 0);
+            nx = base/3;
+            nsize = size/3;
+            ny = 0;
 
-//            fourSquares(g, size / 3, 0, x - size / 3);
-//            fourSquares(g, size / 3, x * 2 / 3 + size / 3, y / 3 + size / 3);
-//            fourSquares(g, size / 3, x / 3 + size / 3, y * 2 / 3 + size / 3);
-
+            g.drawRect(nx, ny, nsize, nsize);
+            fourSquares(g, nx, ny, nsize, nsize);
         }
     }
 
