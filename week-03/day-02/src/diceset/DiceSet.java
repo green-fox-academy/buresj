@@ -1,5 +1,6 @@
 package diceset;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +19,7 @@ public class DiceSet {
         return dice;
     }
 
-    public int sum () {
+    public int sum() {
 
         int sum = 0;
 
@@ -49,7 +50,7 @@ public class DiceSet {
         // You can reroll with reroll()
         // Your task is to roll the dice until all of the dice are 6
 
-        DiceSet diceSet = new DiceSet();
+
 //        System.out.println(diceSet.getCurrent());
 //        System.out.println(diceSet.roll());
 //        System.out.println(diceSet.getCurrent());
@@ -61,9 +62,24 @@ public class DiceSet {
 //        System.out.println(diceSet.sum());
 
 
-        while (diceSet.sum() != 36) {
-            diceSet.reroll();
-            System.out.println(diceSet.getCurrent());
+//        while (diceSet.sum() != 36) {
+//            diceSet.reroll();
+//            System.out.println(diceSet.getCurrent());
+//        }
+
+
+        DiceSet diceSet = new DiceSet();
+
+
+        diceSet.roll();
+
+        for (int dice = 0; dice < 6; dice++) {
+            diceSet.reroll(dice);
+
+            while (diceSet.getCurrent(dice) != 6) {
+                diceSet.reroll(dice);
+            }
         }
+        System.out.println(diceSet.getCurrent());
     }
 }
