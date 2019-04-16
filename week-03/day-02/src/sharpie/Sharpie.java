@@ -10,6 +10,7 @@ package sharpie;
 public class Sharpie {
 
     String color;
+    boolean usable;
     float width;
     float inkAmount;
 
@@ -18,9 +19,10 @@ public class Sharpie {
         this.color = color;
         this.width = width;
         this.inkAmount = 100;
+        this.usable = true;
     }
 
     public void use() {
-        inkAmount -= 10;
+        inkAmount -= 50;
     }
 }
