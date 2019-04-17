@@ -30,11 +30,5 @@ public class Main {
         sharpies.removeTrash();
         sharpies.printAllSharpies();
 
-        sharpieBlack.use();
-        sharpieBlack.use();
-        sharpieBlack.use();
-
-        sharpies.removeTrash();
-        sharpies.printAllSharpies();
     }
 }

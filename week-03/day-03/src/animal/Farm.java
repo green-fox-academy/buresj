@@ -28,7 +28,7 @@ public class Farm {
 
         if (farm >= 1) {
             animals.add(animal);
-            farm -= 1;
+            farm -= 1 ;
         }
     }
 
