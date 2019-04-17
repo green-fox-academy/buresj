@@ -1,4 +1,5 @@
 package sharpie;
+
 import java.util.ArrayList;
 
 
@@ -20,13 +21,11 @@ public class SharpieSet {
         ArrayList<Integer> toEmptyBin = new ArrayList<>();
 
         for (Sharpie sharp : this.sharpies) {
-
             if (!sharp.usable) {
                 toEmptyBin.add(sharpies.indexOf(sharp));
             }
         }
-        for (int toEmpty :
-                toEmptyBin) {
+        for (int toEmpty : toEmptyBin) {
             sharpies.remove(toEmpty);
         }
     }
