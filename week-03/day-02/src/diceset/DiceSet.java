@@ -70,7 +70,6 @@ public class DiceSet {
 
         DiceSet diceSet = new DiceSet();
 
-
         diceSet.roll();
 
         for (int dice = 0; dice < 6; dice++) {
