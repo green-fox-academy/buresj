@@ -22,6 +22,6 @@ public class Armada {
     }
 
     public boolean war(Armada otherArmada) {
-        
+
     }
 }
