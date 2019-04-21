@@ -10,11 +10,11 @@ public class Doubled {
     public static void main(String[] args) {
 
 
-        System.out.println(decryptIt("duplicated-chars"));
+        System.out.println(decrypt("duplicated-chars"));
 
     }
 
-    public static List<String> decryptIt(String nameFile) {
+    public static List<String> decrypt(String nameFile) {
 
         Path path = Paths.get("assets/" + nameFile + ".txt");
 
