@@ -17,7 +17,6 @@ public class Lottery {
         Path path = Paths.get("assets/" + fileName + ".txt");
 
         List<String> lines = new ArrayList<>();
-        List<Integer> result = new ArrayList<>();
         List<String> collector = new ArrayList<>();
         List<String[]> numbersStringy = new ArrayList<>();
         List<String> numbers = new ArrayList<>();
