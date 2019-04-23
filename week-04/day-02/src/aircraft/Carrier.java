@@ -10,7 +10,7 @@ public class Carrier extends Aircraft {
     List<Aircraft> aircrafts;
 
     public Carrier(int ammoStore) {
-        super();
+//        super();
         this.ammoStore = ammoStore;
         this.aircrafts = new ArrayList<>();
     }
@@ -51,9 +51,7 @@ public class Carrier extends Aircraft {
             result = "It is dead, Jim";
         }
         System.out.println(result);
-
     }
-
 
     public int getTotalDamage() {
 
@@ -75,5 +73,3 @@ public class Carrier extends Aircraft {
         }
     }
 }
-
-

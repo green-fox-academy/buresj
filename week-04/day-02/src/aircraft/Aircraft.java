@@ -7,9 +7,9 @@ public class Aircraft {
     int maxAmmo;
     int dealtDamage;
     int baseDamage;
-    boolean priority = false;
+    boolean priority;
 
-    public Aircraft(){}
+//    public Aircraft(){}
 
     public Aircraft(String type){
         this.type = type;
@@ -44,7 +44,6 @@ public class Aircraft {
         if(remain < 0) {
             remain = 0;
         }
-
         return remain;
     }
 
