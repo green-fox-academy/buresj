@@ -34,9 +34,9 @@ public class Flora {
     public String toString() {
 
         if (waterAmount < 20) {
-            return "The " + color + " " + type + " needs water \n";
+            return "The " + color + " " + type + " needs water \n" + waterAmount;
         } else {
-            return "The " + color + " " + type + " doesnt need water \n";
+            return "The " + color + " " + type + " doesnt need water \n" + waterAmount;
         }
     }
 }

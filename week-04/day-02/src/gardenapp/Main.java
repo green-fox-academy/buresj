@@ -9,5 +9,8 @@ public class Main {
         eden.show();
         eden.watering(70);
         eden.show();
+        eden.watering(40);
+        eden.show();
+
     }
 }

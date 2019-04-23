@@ -29,22 +29,24 @@ public class Garden extends Flora {
 
     public void watering(double water) {
 
-        double needWater = 0;
-        double sumWater = 0;
+        int needWater = 0;
         double deployWater;
 
         for (Flora flora : florae) {
-            sumWater += flora.waterAmount;
             if (flora.needsWater = true) {
                 needWater++;
             }
         }
 
-        deployWater = sumWater / needWater;
+        deployWater = water / needWater;
 
         for (Flora flora : florae) {
+
+            if(flora.waterAmount > 20){
+                flora.needsWater = false;
+            }
             if (flora.needsWater) {
-                flora.watering(water - deployWater);
+                flora.watering(deployWater);
             }
         }
     }
