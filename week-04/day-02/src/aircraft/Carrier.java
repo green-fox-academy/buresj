@@ -41,10 +41,16 @@ public class Carrier extends Aircraft {
         }
     }
 
-    public int fight(Carrier anotherCarrier) {
+    public void fight(Carrier anotherCarrier) {
 
+        String result;
         hp -= anotherCarrier.getTotalDamage();
-        return hp;
+        result = Integer.toString(hp);
+
+        if (hp < 0) {
+            result = "It is dead, Jim";
+        }
+        System.out.println(result);
 
     }
 

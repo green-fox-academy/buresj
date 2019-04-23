@@ -30,11 +30,13 @@ public class Main {
         carrierTwo.fill();
 
         carrierOne.fight(carrierTwo);
+        carrierOne.fight(carrierTwo);
+        carrierOne.fight(carrierTwo);
+        carrierOne.fight(carrierTwo);
+        carrierOne.fight(carrierTwo);
+        carrierOne.fight(carrierTwo);
 
         carrierOne.getStatus();
         carrierTwo.getStatus();
-
-
-
     }
 }
