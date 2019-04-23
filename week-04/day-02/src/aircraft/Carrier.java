@@ -41,12 +41,15 @@ public class Carrier extends Aircraft {
         }
     }
 
-    public int fight (Carrier anotherCarrier) {
+    public int fight(Carrier anotherCarrier) {
 
+        hp -= anotherCarrier.getTotalDamage();
+        return hp;
 
     }
 
-    public void getStatus() {
+
+    public int getTotalDamage() {
 
         int totalDamage = 0;
 
@@ -55,7 +58,12 @@ public class Carrier extends Aircraft {
             totalDamage += damage;
         }
 
-        System.out.println("HP: " + hp + ", Aircraft count: " + aircrafts.size() + ", Ammo Storage: " + ammoStore + ", Total damage: " + totalDamage);
+        return totalDamage;
+    }
+
+    public void getStatus() {
+
+        System.out.println("HP: " + hp + ", Aircraft count: " + aircrafts.size() + ", Ammo Storage: " + ammoStore + ", Total damage: " + getTotalDamage());
         for (Aircraft aircraft : aircrafts) {
             System.out.println("Type: " + aircraft.type + ", Ammo: " + aircraft.ammo + ", Base damage: " + aircraft.baseDamage + ", All damage: " + aircraft.getDealtDamage());
         }
