@@ -8,6 +8,10 @@ public class Mentor extends Person {
         super();
     }
 
+    public Mentor(String name, int age, String gender) {
+        super(name, age, gender);
+    }
+
     public Mentor(String name, int age, String gender, String level) {
         super(name, age, gender);
         this.level = level;
