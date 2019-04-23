@@ -10,7 +10,6 @@ public class Aircraft {
     boolean priority;
     boolean filled;
 
-
     public Aircraft(String type){
         this.type = type;
     }
@@ -20,18 +19,19 @@ public class Aircraft {
         ammo = 0;
         return dealtDamage;
     }
-//
-//    public int refill(int fill) {
-//
-//        if (filled) {
-//            return fill;
-//        }
-//
-//        if (ammo + fill > maxAmmo) {
-//
-//        }
-//
-//    }
+
+    public int refill(int fill) {
+
+        int toFill = maxAmmo - ammo;
+        int remain = fill - toFill;
+        ammo += fill;
+
+        if(ammo > maxAmmo) {
+            ammo = maxAmmo;
+        }
+        
+        return remain;
+    }
 
     public String getType(){
         return type;
@@ -40,6 +40,4 @@ public class Aircraft {
     public void getStatus() {
         System.out.println("Type: " + type + " , Ammo: " + ammo + " Base damage: " + baseDamage + " All damage: " + dealtDamage);
     }
-
-
 }
