@@ -5,6 +5,8 @@ public class Main {
         Garden eden = new Garden();
 
         eden.show();
+        eden.watering(40);
+        eden.show();
         eden.watering(70);
         eden.show();
     }
