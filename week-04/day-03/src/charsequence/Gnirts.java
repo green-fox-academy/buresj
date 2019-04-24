@@ -18,7 +18,8 @@ public class Gnirts implements CharSequence {
     }
 
     public CharSequence subSequence(int indexOne, int indexTwo) {
-        return string.subSequence(indexTwo, indexOne);
+        int num = string.length() - 1;
+        return string.subSequence(num - indexOne, num - indexTwo);
     }
 
     public String toString() {
