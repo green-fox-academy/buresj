@@ -9,7 +9,7 @@ public class Aircraft {
     int baseDamage;
     boolean priority;
 
-//    public Aircraft(){}
+   public Aircraft(){}
 
     public Aircraft(String type){
         this.type = type;
