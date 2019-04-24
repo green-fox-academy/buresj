@@ -1,4 +1,4 @@
-//introduces numberOfStrings and
+//        introduces numberOfStrings and
 //        sound() method what's implementation is yet unknown
 //        but with the help of the sound() the play() method is fully implementable
 
@@ -9,6 +9,8 @@ abstract class StringedInstrument extends Instrument {
 
     protected int numberOfStrings;
 
-    public abstract void sound();
+    public StringedInstrument(String name) {
+        super(name);
+    }
 
 }

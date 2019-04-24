@@ -5,13 +5,13 @@
 
 package main.java.music;
 
-abstract class Instrument {
+    abstract class Instrument {
 
-    protected String name;
+        protected String name;
 
-    public Instrument(String name) {
-        this.name = name;
-    }
+        public Instrument(String name) {
+            this.name = name;
+        }
 
-    public abstract void play();
+        public abstract void play();
 }
