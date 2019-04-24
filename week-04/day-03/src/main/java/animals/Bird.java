@@ -1,15 +1,15 @@
 package main.java.animals;
 
-public class Reptile extends Animal{
+public class Bird extends Animal {
 
     String reproduction = "laying eggs";
 
-    public Reptile(String name) {
+    public Bird(String name) {
         super(name);
     }
 
     @Override
-    public String  breed() {
+    public String breed() {
         return reproduction;
     }
 }

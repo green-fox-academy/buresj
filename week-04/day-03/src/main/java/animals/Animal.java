@@ -8,9 +8,13 @@ public abstract class Animal {
     String color;
     boolean isHunger;
 
+    public Animal(String name) {
+        this.name = name;
+    }
+
     public String getName () {
         return name;
     }
 
-    public abstract void breeds();
+    public abstract String breed();
 }
