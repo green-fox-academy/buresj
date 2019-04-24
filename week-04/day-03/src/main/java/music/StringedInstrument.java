@@ -18,5 +18,4 @@ abstract class StringedInstrument extends Instrument {
     public void play(){
         System.out.println();
     }
-
 }
