@@ -45,8 +45,4 @@ public class CowsAndBullsTest {
 
         assertEquals(test, result);
     }
-
-
-
-
 }

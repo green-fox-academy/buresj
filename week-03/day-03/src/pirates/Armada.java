@@ -6,22 +6,22 @@
 //        the loser gets skipped so the next ship comes in play from that armada
 //        whichever armada gets to the end of its ships loses the war
 //        return true if this is the winner
-
-
-package pirates;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class Armada {
-
-    List<Ship> fleet;
-
-    public Armada () {
-        this.fleet = new ArrayList<>();
-    }
-
-    public boolean war(Armada otherArmada) {
-
-    }
-}
+//
+//
+//package pirates;
+//
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Armada {
+//
+//    List<Ship> fleet;
+//
+//    public Armada () {
+//        this.fleet = new ArrayList<>();
+//    }
+//
+//    public boolean war(Armada otherArmada) {
+//
+//    }
+//}
