@@ -11,7 +11,7 @@ public class CowsAndBulls {
 
     public List<String> guess (int one, int two, int three, int four) {
 
-        int[] guess = {one, two, three, four}
+        int[] guess = {one, two, three, four};
         List<String> result = new ArrayList<>();
 
         for (int i = 0; i < guess.length; i++) {
