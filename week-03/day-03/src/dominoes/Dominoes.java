@@ -12,21 +12,19 @@ public class Dominoes {
         // eg: [2, 4], [4, 3], [3, 5] ...
 
         // [5,2][4,6][1,5][6,7][2,4][7,1]
-
         // [5,2][2,4][4,6][6,7][7,1][1,5]
 
         int counter = 0;
+        
         while (snake.size() != dominoes.size()) {
             for (int i = counter; i < dominoes.size(); i++) {
-                if (dominoes.get(counter).getRightSide()
-                        == dominoes.get(i).getLeftSide()) {
+                if (dominoes.get(counter).getRightSide() == dominoes.get(i).getLeftSide()) {
                     snake.add(dominoes.get(counter));
                     snake.add(dominoes.get(i));
                 }
             }
             counter++;
         }
-
         System.out.println(snake);
     }
 
