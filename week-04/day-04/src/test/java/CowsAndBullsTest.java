@@ -19,4 +19,34 @@ public class CowsAndBullsTest {
 
         assertEquals(test, result);
     }
+
+    @Test
+    public void enterWrongGuess_returnEmptyList() {
+
+        int[] code = {1,2,3,4};
+        CowsAndBulls cowsAndBulls = new CowsAndBulls(code);
+        List<String> result = cowsAndBulls.guess(6,6,6,6);
+        List<String> test = new ArrayList<>();
+
+        assertEquals(test, result);
+    }
+
+    @Test
+    public void enterPerfectGuess_returnFourCows() {
+
+        int[] code = {1,2,3,4};
+        CowsAndBulls cowsAndBulls = new CowsAndBulls(code);
+        List<String> result = cowsAndBulls.guess(1,2,3,4);
+        List<String> test = new ArrayList<>();
+        test.add("Cow");
+        test.add("Cow");
+        test.add("Cow");
+        test.add("Cow");
+
+        assertEquals(test, result);
+    }
+
+
+
+
 }
