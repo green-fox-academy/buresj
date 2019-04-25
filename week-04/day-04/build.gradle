@@ -2,7 +2,6 @@ plugins {
     id 'java'
 }
 
-group 'myProject'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
