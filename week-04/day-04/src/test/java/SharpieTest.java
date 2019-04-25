@@ -36,7 +36,7 @@ public class SharpieTest {
 
         assertEquals(true, sharpie.usable);
     }
-    
+
     @Test
     public void sharpieIsDecreasesInk_getTrueIfDecreases() {
 
