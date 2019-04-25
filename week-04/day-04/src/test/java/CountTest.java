@@ -38,7 +38,6 @@ public class CountTest {
         assertEquals(0,result);
     }
 
-
     @Test
     public void enterOneSizeList_returnOneNum() {
         List<Integer> nums = new ArrayList<>();
