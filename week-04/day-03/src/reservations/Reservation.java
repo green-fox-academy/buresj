@@ -1,31 +1,21 @@
 package reservations;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Reservation implements Reservationy {
 
     String dow;
     String code;
 
-    Character[] alphabet = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
-    Character[] nums = {'1', '2', '3', '4', '5', '6', '7', '8'};
+    private final String[] week = {"MON", "TUE", "WEN", "THU", "FRI", "SAT", "SUN"};
+
+    private final Character[] chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+            'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+            'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+
 
     @Override
     public String getDowBooking() {
 
-        List<String> DOW = new ArrayList<>();
-
-        DOW.add("MON");
-        DOW.add("TUE");
-        DOW.add("WEN");
-        DOW.add("THU");
-        DOW.add("FRI");
-        DOW.add("SAT");
-        DOW.add("SUN");
-
-        int chance = (int) (Math.random() * 7);
-        dow = DOW.get(chance);
+        dow = week[(int) (Math.random() * week.length)];
         return dow;
     }
 
@@ -34,17 +24,10 @@ public class Reservation implements Reservationy {
 
         char[] bookingNum = new char[8];
 
-        for (int i = 0; i < 8; i++) {
-            int chance = (int) (Math.random() * i);
-            if (i % 2 == 0) {
-                bookingNum[i] = alphabet[chance];
-            } else {
-                bookingNum[i] = nums[chance];
-            }
+        for (int i = 0; i < bookingNum.length; i++) {
+            bookingNum[i] = chars[(int) (Math.random() * chars.length)];
         }
-
         code = new String(bookingNum);
         return code;
-
     }
 }

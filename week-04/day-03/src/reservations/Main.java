@@ -6,10 +6,11 @@ public class Main {
 
         Reservation reservation = new Reservation();
 
-        reservation.getCodeBooking();
-        reservation.getDowBooking();
-
-        String str = new String.format("Booking### %s", reservation.getCodeBooking());
-        System.out.println(str);
+        for (int i = 0; i < 10; i++) {
+            System.out.println(
+                    String.format("Booking### %1s for %2s",
+                    reservation.getCodeBooking(),
+                    reservation.getDowBooking()));
+        }
     }
 }

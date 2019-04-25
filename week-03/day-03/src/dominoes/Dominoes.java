@@ -15,7 +15,7 @@ public class Dominoes {
         // [5,2][2,4][4,6][6,7][7,1][1,5]
 
         int counter = 0;
-        
+
         while (snake.size() != dominoes.size()) {
             for (int i = counter; i < dominoes.size(); i++) {
                 if (dominoes.get(counter).getRightSide() == dominoes.get(i).getLeftSide()) {
