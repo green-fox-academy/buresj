@@ -4,9 +4,7 @@ import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 
 public class AnagramTest {
-
-
-
+    
     @Test
     public void initAnagram_initedAnagram() {
         Anagram anagram = new Anagram("test","sett");
@@ -22,7 +20,4 @@ public class AnagramTest {
 
         assertEquals(true,result);
     }
-
-
-
 }
