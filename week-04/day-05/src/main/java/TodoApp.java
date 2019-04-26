@@ -1,5 +1,3 @@
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class TodoApp {
@@ -15,7 +13,7 @@ public class TodoApp {
 
         if (args[0].equals("-a")) {
             try {
-                tasks.add(new Task(args[1]));
+                tasks.add(new Task("[ ]" + " " + args[1]));
                 ioManager.writeData(tasks);
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("Unable to add: no task provided!");
@@ -24,7 +22,46 @@ public class TodoApp {
 
         if (args[0].equals("-l")) {
             for (Task taski : tasks) {
-                System.out.println(taski.getName());
+                System.out.println(taski.getStatus());
+            }
+        }
+
+        if (args[0].equals("-c")) {
+
+            int completedIndex = Integer.parseInt(args[1]) - 1;
+            String name = tasks.get(completedIndex).getName();
+            name = name.substring(4);
+
+            tasks.remove(completedIndex);
+            tasks.add(new Task("[X]" + " " + name));
+            ioManager.writeData(tasks);
+
+            if (completedIndex > tasks.size()) {
+                System.out.println("No task founded");
+                System.out.println("You have only " + tasks.size() + " tasks");
+            }
+        }
+
+        if (args[0].equals("-r")) {
+
+            int removeIndex;
+
+            try {
+                removeIndex = Integer.parseInt(args[1]) - 1;
+
+                if (removeIndex > tasks.size()) {
+                    System.out.println("No task founded");
+                    System.out.println("You have only " + tasks.size() + " tasks");
+                } else {
+                    try {
+                        tasks.remove(removeIndex);
+                        ioManager.writeData(tasks);
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                        System.out.println("Unable to remove: no task provided!");
+                    }
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Unable to remove: index is not a number");
             }
         }
     }

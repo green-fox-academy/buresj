@@ -4,6 +4,7 @@ import java.util.List;
 public class Task {
 
     String nameOfTask;
+    boolean completed = false;
 
 
     public Task() {
@@ -26,5 +27,11 @@ public class Task {
 
     public String getName() {
         return nameOfTask;
+    }
+
+    public String getStatus() {
+
+        return  nameOfTask;
+
     }
 }

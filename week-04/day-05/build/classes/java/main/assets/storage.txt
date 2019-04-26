@@ -1,4 +1,4 @@
-This is my first task.
-This is my second task.
-Go out!
-Do something
+[ ] Do somehing
+[ ] Do somehing else
+[ ] Do somehing today
+[ ] Do somehing after that

@@ -36,6 +36,5 @@ public class IOManager {
             } catch (IOException e) {
                 System.out.println("Cannot write file.");
             }
-            System.out.println("Task stored");
         }
     }

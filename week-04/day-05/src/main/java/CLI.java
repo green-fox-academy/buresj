@@ -1,6 +1,8 @@
 public class CLI {
 
     public void printMenu() {
+        System.out.println("*********************************");
+        System.out.println();
         System.out.println("COMMAND LINE TO-DO APPLICATION");
         System.out.println("=============================");
         System.out.println("-l   Lists all the tasks");
