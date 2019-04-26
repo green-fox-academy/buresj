@@ -9,7 +9,10 @@ public class TodoApp {
         IOManager ioManager = new IOManager("storage.txt");
         List<Task> tasks = task.getTasks(ioManager);
 
-        cli.printMenu();
+
+        if (args[0].equals("-m")) {
+            cli.printMenu();
+        }
 
         if (args[0].equals("-a")) {
             try {
@@ -21,8 +24,11 @@ public class TodoApp {
         }
 
         if (args[0].equals("-l")) {
+            int counter = 1;
+
             for (Task taski : tasks) {
-                System.out.println(taski.getStatus());
+                System.out.println(counter + ". " + taski.getStatus());
+                counter++;
             }
         }
 

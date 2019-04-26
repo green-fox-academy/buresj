@@ -1,4 +1,4 @@
 [ ] Do somehing
 [ ] Do somehing else
 [ ] Do somehing today
-[ ] Do somehing after that
+[X] Do somehing after that

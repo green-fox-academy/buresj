@@ -4,8 +4,6 @@ import java.util.List;
 public class Task {
 
     String nameOfTask;
-    boolean completed = false;
-
 
     public Task() {
     }
@@ -30,8 +28,6 @@ public class Task {
     }
 
     public String getStatus() {
-
-        return  nameOfTask;
-
+        return nameOfTask;
     }
 }
