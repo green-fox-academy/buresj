@@ -4,6 +4,7 @@ import java.util.List;
 public class Task {
 
     String nameOfTask;
+    boolean finished;
 
     public Task() {
     }
@@ -23,6 +24,15 @@ public class Task {
         return tasks;
     }
 
+    public boolean isFinished() {
+        if (nameOfTask.contains("[X]")) {
+            return finished = true;
+        } else {
+            return finished = false;
+        }
+    }
+
+
     public String getName() {
         return nameOfTask;
     }
@@ -30,4 +40,7 @@ public class Task {
     public String getStatus() {
         return nameOfTask;
     }
+
+
+
 }
