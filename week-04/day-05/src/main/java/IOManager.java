@@ -23,12 +23,19 @@ public class IOManager {
             return content;
         }
 
-//        public void writeData(List<String> data) {
-//            try {
-//                Files.write(path, data);
-//            } catch (IOException e) {
-//                System.out.println("Cannot write file.");
-//            }
-//            System.out.println("Task stored");
-//        }
+        public void writeData(List<Task> data) {
+
+            List<String> stringyList = new ArrayList<>();
+
+            for (Task task: data) {
+                stringyList.add(task.getName());
+            }
+
+            try {
+                Files.write(path, stringyList);
+            } catch (IOException e) {
+                System.out.println("Cannot write file.");
+            }
+            System.out.println("Task stored");
+        }
     }

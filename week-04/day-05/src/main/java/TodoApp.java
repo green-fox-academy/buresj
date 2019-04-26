@@ -14,6 +14,7 @@ public class TodoApp {
 
         if (args[0].equals("-a")) {
             tasks.add(new Task(args[1]));
+            ioManager.writeData(tasks);
         }
 
         if (args[0].equals("-l")) {

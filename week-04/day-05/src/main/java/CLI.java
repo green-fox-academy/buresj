@@ -8,8 +8,4 @@ public class CLI {
         System.out.println("-r   Removes a task");
         System.out.println("-c   Completes a task");
     }
-
-    public void addNewTask() {
-        System.out.println("-a   Adds a new task");
-    }
 }
