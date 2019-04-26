@@ -24,11 +24,6 @@ public class Task {
         return tasks;
     }
 
-    public void setTasks(Task task) {
-
-    }
-
-
     public String getName() {
         return nameOfTask;
     }

@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,12 +14,16 @@ public class TodoApp {
         cli.printMenu();
 
         if (args[0].equals("-a")) {
-            tasks.add(new Task(args[1]));
-            ioManager.writeData(tasks);
+            try {
+                tasks.add(new Task(args[1]));
+                ioManager.writeData(tasks);
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Unable to add: no task provided!");
+            }
         }
 
         if (args[0].equals("-l")) {
-            for (Task taski: tasks) {
+            for (Task taski : tasks) {
                 System.out.println(taski.getName());
             }
         }
