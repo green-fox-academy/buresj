@@ -5,18 +5,26 @@ public class Task {
 
     String nameOfTask;
 
-    public Task(String nameOfTask) {
-        this.nameOfTask = nameOfTask;
-    }
 
     public Task() {
     }
 
-    public void getTasks(IOManager ioManager) {
+    public Task(String nameOfTask) {
+        this.nameOfTask = nameOfTask;
+    }
 
-        List<String> tasks = new ArrayList<>(ioManager.readFile());
-        for (String task : tasks) {
-            System.out.println(task);
+    public List<Task> getTasks(IOManager ioManager) {
+
+        List<Task> tasks = new ArrayList<>();
+        List<String> writenTasks = new ArrayList<>(ioManager.readFile());
+
+        for (String line : writenTasks) {
+            tasks.add(new Task(line));
         }
+        return tasks;
+    }
+
+    public String getName() {
+        return nameOfTask;
     }
 }

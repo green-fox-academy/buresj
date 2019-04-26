@@ -7,17 +7,19 @@ public class TodoApp {
 
         CLI cli = new CLI();
         Task task = new Task();
-        List<Task> tasks = new ArrayList<>();
         IOManager ioManager = new IOManager("storage.txt");
+        List<Task> tasks = task.getTasks(ioManager);
 
         cli.printMenu();
 
-//        if (args[0].equals("-a")) {
-//            tasks.add(new Task(args[1]));
-//        }
+        if (args[0].equals("-a")) {
+            tasks.add(new Task(args[1]));
+        }
 
         if (args[0].equals("-l")) {
-            task.getTasks(ioManager);
+            for (Task taski: tasks) {
+                System.out.println(taski.getName());
+            }
         }
     }
 }
