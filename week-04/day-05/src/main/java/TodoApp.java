@@ -27,36 +27,36 @@ public class TodoApp {
             int counter = 1;
 
             for (Task taski : tasks) {
-                System.out.println(counter + ". " + taski.getStatus());
+                System.out.println(counter + ". " + taski.getName());
                 counter++;
             }
         }
 
         if (args[0].equals("-lo")) {
-
             int counter = 1;
+
             for (Task taski : tasks) {
                 if(!taski.isFinished()) {
-                    System.out.println(counter + ". " + taski.getStatus());
+                    System.out.println(counter + ". " + taski.getName());
                     counter++;
                 }
             }
         }
 
         if (args[0].equals("-lx")) {
-
             int counter = 1;
+
             for (Task taski : tasks) {
                 if(taski.isFinished()) {
-                    System.out.println(counter + ". " + taski.getStatus());
+                    System.out.println(counter + ". " + taski.getName());
                     counter++;
                 }
             }
         }
 
         if (args[0].equals("-c")) {
-
             int completedIndex = Integer.parseInt(args[1]) - 1;
+
             String name = tasks.get(completedIndex).getName();
             name = name.substring(4);
 

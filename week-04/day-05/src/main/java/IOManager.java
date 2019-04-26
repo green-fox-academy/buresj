@@ -14,7 +14,9 @@ public class IOManager {
         }
 
         public List<String> readFile() {
+
             List<String> content = new ArrayList<>();
+
             try {
                 content = Files.readAllLines(this.path);
             } catch (IOException e) {

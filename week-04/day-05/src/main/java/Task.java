@@ -32,15 +32,7 @@ public class Task {
         }
     }
 
-
     public String getName() {
         return nameOfTask;
     }
-
-    public String getStatus() {
-        return nameOfTask;
-    }
-
-
-
 }
