@@ -1,4 +1,6 @@
 
 # JIRI BURES' REPOSITORIES
 
-[web](https://github.com/buresj/buresj.github.io)
+## [Todo App project](https://github.com/buresj/todoapp)
+
+
