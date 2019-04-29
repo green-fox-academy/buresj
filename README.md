@@ -5,4 +5,4 @@
 
 ## [Diary project](https://github.com/buresj/projectDiary)
 
-
+## [Wanderer game](https://github.com/buresj/wanderer-java)
