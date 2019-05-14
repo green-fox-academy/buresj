@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -79,13 +76,17 @@ public class Exercises {
         //Ex 9: Write a Stream Expression to find the frequency of characters in a given string!
        String word = "umbadghuom";
 
+       //Count frequency of a concrete character
        long count = word.chars()
                .filter(c -> c == 'u')
                .count();
-
-        HashMap<Character, String> freqency 
-
         System.out.println(count);
+
+        //Count frequency of all characters
+        Map<String, Long> frequentChars = Arrays.stream(word.toLowerCase().split(""))
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+
+        System.out.println(frequentChars);
 
     }
 }
