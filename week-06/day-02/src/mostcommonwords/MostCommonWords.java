@@ -28,6 +28,7 @@ public class MostCommonWords {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
 
+        //Without reversing the order
         counter.entrySet().stream()
                 .limit(100)
                 .sorted(Comparator.comparing(Map.Entry::getValue))
