@@ -8,7 +8,8 @@ public class HelloRESTController {
     AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam String name) {
-        return new Greeting(counter.incrementAndGet(), "Hello " + name);
+    public String greeting(@RequestParam String name) {
+        Greeting greets = new Greeting(counter.incrementAndGet(), "Hello " + name);
+        return greets.getContent() +", You have visited this page " + greets.getId() + " times.";
     }
 }
