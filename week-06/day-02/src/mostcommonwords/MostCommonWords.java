@@ -27,7 +27,6 @@ public class MostCommonWords {
                 .filter(word -> !word.isEmpty())
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
-
         //Without reversing the order
         counter.entrySet().stream()
                 .limit(100)

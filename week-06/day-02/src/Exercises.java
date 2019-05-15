@@ -87,6 +87,5 @@ public class Exercises {
                 .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
 
         System.out.println(frequentChars);
-
     }
 }
