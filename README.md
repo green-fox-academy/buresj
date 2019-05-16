@@ -7,4 +7,4 @@
 
 ## [Wanderer game](https://github.com/buresj/wanderer-java)
 
-## [Wanderer game](https://github.com/buresj/personalWebsite)
+## [Personal Web](https://github.com/buresj/personalWebsite)
