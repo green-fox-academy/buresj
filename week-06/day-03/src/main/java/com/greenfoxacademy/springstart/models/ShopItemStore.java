@@ -2,7 +2,10 @@ package com.greenfoxacademy.springstart.models;
 
 import org.springframework.stereotype.Controller;
 
+import java.awt.image.ShortLookupTable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,7 +17,7 @@ public class ShopItemStore {
     public ShopItemStore() {
         store = new ArrayList<>();
 
-        store.add(new ShopItem("Running shoes", "Nike running schoes", 1000, 5));
+        store.add(new ShopItem("Running shoes", "Running nike schoes", 1000, 5));
         store.add(new ShopItem("Printer", "Some HP printer", 3000, 2));
         store.add(new ShopItem("Coca Cola", "0,5 l standard coke", 25, 0));
         store.add(new ShopItem("Wokin", "Fried chicken", 119, 100));
@@ -31,9 +34,45 @@ public class ShopItemStore {
     public List<ShopItem> avalaible() {
 
         List<ShopItem> avalaibleItems = store.stream()
-                .filter(i -> i.getPrice() > 0)
+                .filter(i -> i.getQuantityOfStock() > 0)
                 .collect(Collectors.toList());
 
         return avalaibleItems;
+    }
+
+
+    public List<ShopItem> cheapestFirst() {
+
+        List<ShopItem> ascendingItems = store.stream()
+                .sorted(Comparator.comparingInt(ShopItem::getPrice))
+                .collect(Collectors.toList());
+
+        return ascendingItems;
+    }
+
+    public List<ShopItem> expensiveFirst() {
+        List<ShopItem> descendingItems = store.stream()
+                .sorted(Comparator.comparingInt(ShopItem::getPrice))
+                .sorted(Collections.reverseOrder())
+                .collect(Collectors.toList());
+
+        return descendingItems;
+    }
+
+    public List<ShopItem> containsNike() {
+        List<ShopItem> nikedList = store.stream()
+                .filter(i -> i.getDescription().contains("nike"))
+                .collect(Collectors.toList());
+
+        return nikedList;
+    }
+
+    public Double averageStock() {
+         double avarage = store.stream()
+                .mapToDouble(i -> i.getQuantityOfStock())
+                 .average()
+                 .getAsDouble();
+
+        return avarage;
     }
 }

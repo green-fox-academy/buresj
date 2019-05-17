@@ -6,6 +6,15 @@
 </head>
 <body>
 
+<ul>
+    <li><a href="http://localhost:8080/store/">All items</a></li>
+    <li><a href="http://localhost:8080/store/only-available">Only available</a></li>
+    <li><a href="http://localhost:8080/store/cheapest-first">Cheapest items</a></li>
+    <li><a href="http://localhost:8080/store/expensive-first">Expensive items</a></li>
+    <li><a href="http://localhost:8080/store/nike">Contains nike</a></li>
+    <li><a href="http://localhost:8080/store/average-stock">Average stock</a></li>
+</ul>
+
 <table>
     <thead>
     <tr>
@@ -24,6 +33,8 @@
     </tr>
     </tbody>
 </table>
+
+<h3 th:text="${avarage}"></h3>
 
 </body>
 </html>
