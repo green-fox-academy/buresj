@@ -18,7 +18,10 @@ li a {
     text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
+.search_bar {
+    margin: 60px;
+}
+
 li a:hover {
     background-color: #111;
 }

@@ -2,9 +2,7 @@ package com.greenfoxacademy.springstart.models;
 
 import org.springframework.stereotype.Controller;
 
-import java.awt.image.ShortLookupTable;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,7 +25,6 @@ public class ShopItemStore {
     public List<ShopItem> getAll() {
 
         List<ShopItem> allItems = store.stream().collect(Collectors.toList());
-
         return allItems;
     }
 
@@ -36,7 +33,6 @@ public class ShopItemStore {
         List<ShopItem> avalaibleItems = store.stream()
                 .filter(i -> i.getQuantityOfStock() > 0)
                 .collect(Collectors.toList());
-
         return avalaibleItems;
     }
 
@@ -44,7 +40,6 @@ public class ShopItemStore {
         List<ShopItem> ascendingItems = store.stream()
                 .sorted(Comparator.comparingInt(ShopItem::getPrice))
                 .collect(Collectors.toList());
-
         return ascendingItems;
     }
 
@@ -54,7 +49,6 @@ public class ShopItemStore {
         List<ShopItem> expensiveItem = new ArrayList<>();
         ShopItem expensive = store.stream().max(comparator).get();
         expensiveItem.add(expensive);
-
         return expensiveItem;
     }
 
@@ -62,7 +56,6 @@ public class ShopItemStore {
         List<ShopItem> nikedList = store.stream()
                 .filter(i -> i.getDescription().contains("nike"))
                 .collect(Collectors.toList());
-
         return nikedList;
     }
 
@@ -71,11 +64,10 @@ public class ShopItemStore {
                 .mapToDouble(i -> i.getQuantityOfStock())
                 .average()
                 .getAsDouble();
-
         return avarage;
     }
 
-    public List<ShopItem> searchItems (String searchInput) {
+    public List<ShopItem> searchItems(String searchInput) {
         List<ShopItem> foundList = store.stream()
                 .filter(i -> i.getDescription().contains(searchInput) || i.getName().contains(searchInput))
                 .collect(Collectors.toList());
