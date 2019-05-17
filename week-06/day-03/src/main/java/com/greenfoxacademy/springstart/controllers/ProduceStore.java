@@ -1,11 +1,11 @@
 package com.greenfoxacademy.springstart.controllers;
 
-import com.greenfoxacademy.springstart.models.ShopItem;
 import com.greenfoxacademy.springstart.models.ShopItemStore;
-import org.apache.catalina.Store;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ProduceStore {
@@ -51,6 +51,12 @@ public class ProduceStore {
     public String average(Model model) {
 
         model.addAttribute("avarage", store.averageStock());
+        return "index";
+    }
+
+    @RequestMapping("/store/search")
+    public String search(Model model, @RequestParam String search) {
+        model.addAttribute("store", store.searchItems(search));
         return "index";
     }
 }
