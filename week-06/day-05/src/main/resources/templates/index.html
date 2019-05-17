@@ -3,8 +3,42 @@
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="../static/styles.css"/>
 </head>
 <body>
-<span th:text="${one}"></span>
+
+<ul>
+    <li><a href="http://localhost:8080/store/">All items</a></li>
+    <li><a href="http://localhost:8080/store/only-available">Only available</a></li>
+    <li><a href="http://localhost:8080/store/cheapest-first">Cheapest items</a></li>
+    <li><a href="http://localhost:8080/store/most-expensive">Expensive items</a></li>
+    <li><a href="http://localhost:8080/store/nike">Contains nike</a></li>
+    <li><a href="http://localhost:8080/store/average-stock">Average stock</a></li>
+</ul>
+
+<form method="post" action="/store/search">
+    <input type ="text" name="search" placeholder="....">
+    <button type="submit">Search</button>
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity of stock</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${store}">
+        <td th:text="${item.getName()}"></td>
+        <td th:text="${item.getDescription()}"></td>
+        <td th:text="${item.getPrice()} + 'Kč'"></td>
+        <td th:text="${item.getQuantityOfStock()}"></td>
+    </tr>
+    </tbody>
+</table>
+
 </body>
 </html>
