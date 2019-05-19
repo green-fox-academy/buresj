@@ -2,16 +2,19 @@ package greenfox.bookapp.models;
 
 public class Book {
 
-    private int id;
-    private String title;
-    private String author;
-    private int releaseYear;
+    int id;
+    String title;
+    String author;
+    int releaseYear;
 
     public Book(int id, String title, String author, int releaseYear) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.releaseYear = releaseYear;
+    }
+
+    public Book() {
     }
 
     public int getId() {
