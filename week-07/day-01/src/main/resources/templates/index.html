@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bank of Simba</title>
+</head>
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Published</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="acc : ${accounts}">
+        <td th:text="${acc.getName()}"></td>
+        <td th:text="${acc.getBalance()}"></td>
+        <td th:text="${acc.getAnimalType()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
