@@ -13,11 +13,11 @@ import java.util.List;
 public class MainController {
 
     List<BankAccount> accounts = Arrays.asList(
-            new BankAccount("Simba", 2430.00d, "lion"),
-            new BankAccount("Scar", 975743.06d, "lion", true),
-            new BankAccount("Pumba", 5453.00d, "warthog"),
-            new BankAccount("Timon", 766.00d, "meerkat "),
-            new BankAccount("Rafiki", 1.43d, "baboon"));
+            new BankAccount("Simba", 2430.00d, "lion", "good"),
+            new BankAccount("Scar", 975743.06d, "lion", "bad", true),
+            new BankAccount("Pumba", 5453.00d, "warthog","good"),
+            new BankAccount("Timon", 766.00d, "meerkat ", "good"),
+            new BankAccount("Rafiki", 1.43d, "baboon", "good"));
 
     @RequestMapping(path = "/show", method = RequestMethod.GET)
     public String show(Model model) {

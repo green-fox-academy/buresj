@@ -5,19 +5,22 @@ public class BankAccount {
     private double balance;
     private String animalType;
     private boolean isKing = false;
+    private String morality;
 
 
-    public BankAccount(String name, double balance, String animalType) {
+    public BankAccount(String name, double balance, String animalType, String morality) {
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
+        this.morality = morality;
     }
 
-    public BankAccount(String name, double balance, String animalType, boolean isKing) {
+    public BankAccount(String name, double balance, String animalType, String morality, boolean isKing) {
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
         this.isKing = isKing;
+        this.morality = morality;
     }
 
     public BankAccount() {
@@ -53,5 +56,23 @@ public class BankAccount {
 
     public void setKing(boolean king) {
         isKing = king;
+    }
+
+    public String getKing() {
+        String str = "";
+
+        if (isKing) {
+            str = "king";
+        }
+
+        return str;
+    }
+
+    public String getMorality() {
+        return morality;
+    }
+
+    public void setMorality(String morality) {
+        this.morality = morality;
     }
 }

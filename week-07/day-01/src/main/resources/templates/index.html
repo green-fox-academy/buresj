@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+<link rel="stylesheet" href="../static/styles.css"/>
 <head>
     <meta charset="UTF-8">
     <title>Bank of Simba</title>
@@ -16,16 +16,20 @@
         <th>Balance</th>
         <th>Animal type</th>
         <th>Royal</th>
+        <th>Good or bad?</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="acc : ${accounts}">
-        <td th:text="${accStat.index}"></td>
-        <td th:text="${acc.getName()}"></td>
-        <td th:text="'Ƶ ' + ${#numbers.formatDecimal(acc.getBalance(), 0, 'COMMA', 2, 'POINT')}"></td>
-        <td th:text="${acc.getAnimalType()}"></td>
-        <td th:text="${acc.isKing()} ? 'King' : 'Not a king'"></td>
-
+        <td th:class="acc.getKing" th:text="${accStat.index}"></td>
+        <td th:class="acc.getKing" th:text="${acc.getName()}"></td>
+        <td th:class="acc.getKing" th:text="'Ƶ ' + ${#numbers.formatDecimal(acc.getBalance(), 0, 'COMMA', 2, 'POINT')}"></td>
+        <td th:class="acc.getKing" th:text="${acc.getAnimalType()}"></td>
+        <td th:class="acc.getKing" th:utext="${acc.isKing()} ? '<b>King</b>' : 'Not a king'"></td>
+        <td th:switch="${acc.getMorality()}">
+            <span th:case="good">Good</span>
+            <span th:case="bad">Bad</span>
+        </td>
     </tr>
     </tbody>
 </table>
