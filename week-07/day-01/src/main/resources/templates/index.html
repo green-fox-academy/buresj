@@ -7,19 +7,19 @@
     <title>Bank of Simba</title>
 </head>
 <body>
+<h1>Bank of Simba</h1><br>
 <table class="table">
     <thead>
     <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Published</th>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Animal type</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="acc : ${accounts}">
         <td th:text="${acc.getName()}"></td>
-        <td th:text="${acc.getBalance()}"></td>
+        <td th:text="'Ƶ ' + ${#numbers.formatDecimal(acc.getBalance(), 0, 'COMMA', 2, 'POINT')}"></td>
         <td th:text="${acc.getAnimalType()}"></td>
     </tr>
     </tbody>
