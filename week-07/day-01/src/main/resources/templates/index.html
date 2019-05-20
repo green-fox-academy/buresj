@@ -11,6 +11,7 @@
 <table class="table">
     <thead>
     <tr>
+        <th>Index</th>
         <th>Name</th>
         <th>Balance</th>
         <th>Animal type</th>
@@ -18,6 +19,7 @@
     </thead>
     <tbody>
     <tr th:each="acc : ${accounts}">
+        <td th:text="${accStat.index}"></td>
         <td th:text="${acc.getName()}"></td>
         <td th:text="'Ƶ ' + ${#numbers.formatDecimal(acc.getBalance(), 0, 'COMMA', 2, 'POINT')}"></td>
         <td th:text="${acc.getAnimalType()}"></td>

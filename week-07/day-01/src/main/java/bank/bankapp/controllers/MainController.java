@@ -20,7 +20,6 @@ public class MainController {
             new BankAccount("Timon", 766.00d, "meerkat "),
             new BankAccount("Rafiki", 1.43d, "baboon"));
 
-
     @RequestMapping(path = "/show", method = RequestMethod.GET)
     public String show(Model model) {
         model.addAttribute("accounts", accounts);
