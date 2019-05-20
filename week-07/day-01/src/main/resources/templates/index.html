@@ -34,8 +34,17 @@
             <td><input type="submit" value="Increment"></td>
             </form>
         </tr>
+        <tr>
+            <form action="#" th:action="@{/add}" th:object="${newAccount}" method="post">
+                <td><input type="text" th:field="*{name}"></td>
+                <td><input type="number" th:field="*{balance}"></td>
+                <td><input type="text" th:field="*{animalType}"></td>
+                <td><input type="checkbox" th:field="*{isKing}"></td>
+                <td><input type="text" th:field="*{morality}"></td>
+                <td><input type="submit" value="Add new acount"></td>
+            </form>
+        </tr>
         </tbody>
     </table>
-
 </body>
 </html>

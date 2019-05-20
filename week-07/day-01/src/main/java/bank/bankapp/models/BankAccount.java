@@ -80,7 +80,12 @@ public class BankAccount {
     }
 
     public void increment() {
-        balance++;
+
+        if (isKing) {
+            balance += 100;
+        } else {
+            balance += 10;
+        }
     }
 
     public int getId() {
