@@ -16,15 +16,23 @@ public class MainController {
 
     public MainController() {
         this.accounts = new ArrayList<>(Arrays.asList(
-                new BankAccount(1, "Simba", 2430.00d, "lion", "good"),
-                new BankAccount(2, "Scar", 975743.06d, "lion", "bad", true),
-                new BankAccount(3, "Pumba", 5453.00d, "warthog", "good"),
-                new BankAccount(4, "Timon", 766.00d, "meerkat ", "good"),
-                new BankAccount(5, "Rafiki", 1.43d, "baboon", "good")));
+                new BankAccount(0, "Simba", 2430.00d, "lion", "good"),
+                new BankAccount(1, "Scar", 975743.06d, "lion", "bad", true),
+                new BankAccount(2, "Pumba", 5453.00d, "warthog", "good"),
+                new BankAccount(3, "Timon", 766.00d, "meerkat ", "good"),
+                new BankAccount(4, "Rafiki", 1.43d, "baboon", "good")));
     }
 
     @RequestMapping(path = "/show", method = RequestMethod.GET)
     public String show(Model model) {
+        model.addAttribute("accounts", accounts);
+        model.addAttribute("newAccount", new BankAccount());
+        return "index";
+    }
+
+    @RequestMapping(path = "/increment/{id}", method = RequestMethod.GET)
+    public String displayAll(Model model, @PathVariable(name = "id") Integer id) {
+        accounts.get(id).increment();
         model.addAttribute("accounts", accounts);
         model.addAttribute("newAccount", new BankAccount());
         return "index";
