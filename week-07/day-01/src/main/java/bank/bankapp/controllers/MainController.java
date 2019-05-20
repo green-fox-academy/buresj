@@ -13,16 +13,21 @@ import java.util.List;
 public class MainController {
 
     List<BankAccount> accounts = Arrays.asList(
-            new BankAccount("Simba", 2000.00d, "lion"),
-            new BankAccount("Scar", 5000.00d, "lion"));
+            new BankAccount("Simba", 2430.00d, "lion"),
+            new BankAccount("Scar", 975743.06d, "lion"),
+            new BankAccount("Timon", 5545.30d, "meerkat"),
+            new BankAccount("Pumba", 5453.00d, "warthog"),
+            new BankAccount("Timon", 766.00d, "meerkat "),
+            new BankAccount("Rafiki", 1.43d, "baboon"));
+
 
     @RequestMapping(path = "/show", method = RequestMethod.GET)
-    public String show(Model model){
+    public String show(Model model) {
         model.addAttribute("accounts", accounts);
         return "index";
     }
 
-    @RequestMapping(path ="/inception", method = RequestMethod.GET)
+    @RequestMapping(path = "/inception", method = RequestMethod.GET)
     public String HTMLception(Model model) {
 
         String text = "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>";
