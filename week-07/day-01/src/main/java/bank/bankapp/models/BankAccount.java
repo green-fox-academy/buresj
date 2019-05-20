@@ -1,6 +1,7 @@
 package bank.bankapp.models;
 
 public class BankAccount {
+    private int id;
     private String name;
     private double balance;
     private String animalType;
@@ -8,14 +9,16 @@ public class BankAccount {
     private String morality;
 
 
-    public BankAccount(String name, double balance, String animalType, String morality) {
+    public BankAccount(int id, String name, double balance, String animalType, String morality) {
+        this.id = id;
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
         this.morality = morality;
     }
 
-    public BankAccount(String name, double balance, String animalType, String morality, boolean isKing) {
+    public BankAccount(int id, String name, double balance, String animalType, String morality, boolean isKing) {
+        this.id = id;
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
@@ -74,5 +77,17 @@ public class BankAccount {
 
     public void setMorality(String morality) {
         this.morality = morality;
+    }
+
+    public void increment() {
+        balance++;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
