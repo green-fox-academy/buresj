@@ -14,8 +14,7 @@ public class MainController {
 
     List<BankAccount> accounts = Arrays.asList(
             new BankAccount("Simba", 2430.00d, "lion"),
-            new BankAccount("Scar", 975743.06d, "lion"),
-            new BankAccount("Timon", 5545.30d, "meerkat"),
+            new BankAccount("Scar", 975743.06d, "lion", true),
             new BankAccount("Pumba", 5453.00d, "warthog"),
             new BankAccount("Timon", 766.00d, "meerkat "),
             new BankAccount("Rafiki", 1.43d, "baboon"));

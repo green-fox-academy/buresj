@@ -15,6 +15,7 @@
         <th>Name</th>
         <th>Balance</th>
         <th>Animal type</th>
+        <th>Royal</th>
     </tr>
     </thead>
     <tbody>
@@ -23,6 +24,8 @@
         <td th:text="${acc.getName()}"></td>
         <td th:text="'Ƶ ' + ${#numbers.formatDecimal(acc.getBalance(), 0, 'COMMA', 2, 'POINT')}"></td>
         <td th:text="${acc.getAnimalType()}"></td>
+        <td th:text="${acc.isKing()} ? 'King' : 'Not a king'"></td>
+
     </tr>
     </tbody>
 </table>
