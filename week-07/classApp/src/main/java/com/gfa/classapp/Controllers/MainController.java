@@ -19,7 +19,6 @@ public class MainController {
                           @Qualifier("IO") StudentServiceProvider provider2){
         this.provider1= provider1;
         this.provider2= provider2;
-
     }
 
     @RequestMapping("/gfa")
