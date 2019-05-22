@@ -1,5 +1,6 @@
 package day3.excercise;
 
+import day3.excercise.services.MyColor;
 import day3.excercise.services.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,6 +13,9 @@ public class ExcerciseApplication implements CommandLineRunner {
     @Autowired
     private Printer printer;
 
+    @Autowired
+    private MyColor myColor;
+
     public static void main(String[] args) {
         SpringApplication.run(ExcerciseApplication.class, args);
     }
@@ -19,6 +23,7 @@ public class ExcerciseApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         printer.log("Hi");
+        myColor.printColor();
     }
 
 }
