@@ -31,4 +31,16 @@ public class UsefulUtilities {
         }
         return "email";
     }
+
+    @RequestMapping("/useful/encode")
+    public String encoder (@RequestParam String text, @RequestParam int number, Model model) {
+        model.addAttribute("text", utilityService.caesar(text, number));
+        return "encoded";
+    }
+
+    @RequestMapping("/useful/decode")
+    public String decoder (@RequestParam String text, @RequestParam int number, Model model) {
+        model.addAttribute("text", utilityService.caesar(text, (number * -1)));
+        return "encoded";
+    }
 }
