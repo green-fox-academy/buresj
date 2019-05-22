@@ -1,4 +1,4 @@
-package day3.excercise.services;
+package day3.excercise.models;
 
 public interface MyColor {
     public void printColor();

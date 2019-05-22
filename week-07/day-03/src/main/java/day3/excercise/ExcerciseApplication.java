@@ -1,6 +1,6 @@
 package day3.excercise;
 
-import day3.excercise.services.MyColor;
+import day3.excercise.models.MyColor;
 import day3.excercise.services.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
