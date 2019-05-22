@@ -3,34 +3,41 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseManager {
 
-    public static void main(String[] args) {
+        private String dbURL = "jdbc:mysql://localhost:3306/todoapp";
+        private String username = "mysqladmin";
+        private String password = "";
 
-        String dbURL = "jdbc:mysql://localhost:3306/todoapp";
-        String username = "mysqladmin";
-        String password = "";
+        private Connection dbCon = null;
+        private Statement stmt = null;
+        private ResultSet rs = null;
 
-        Connection dbCon = null;
-        Statement stmt = null;
-        ResultSet rs = null;
-        String query = "SELECT task_text FROM task WHERE task_id = 1";
+        public List<String> load(){
 
-        try {
-            dbCon = DriverManager.getConnection(dbURL, username, password);
-            stmt = dbCon.prepareStatement(query);
-            rs = stmt.executeQuery(query);
+            String query = "SELECT * FROM task";
+            List<String> content = new ArrayList<>();
 
-            while(rs.next())
-            {
-                System.out.println(rs.getString(1));
+            try {
+                dbCon = DriverManager.getConnection(dbURL, username, password);
+                stmt = dbCon.prepareStatement(query);
+                rs = stmt.executeQuery(query);
+
+                while(rs.next())
+                {
+                    content.add(rs.getString(1) + " "
+                            + rs.getString(2) + " "
+                            + rs.getString(3));
+                }
+
+            } catch (SQLException ex) {
+                ex.printStackTrace();
             }
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+            return content;
         }
-    }
 }
 
 

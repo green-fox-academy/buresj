@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: commons-collections-3.2.jar mysql-connector-java-8.0.16.ja
+ r protobuf-java-3.6.1.jar
+Main-Class: TodoApp
+

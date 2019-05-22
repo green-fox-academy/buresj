@@ -3,12 +3,12 @@ import java.util.List;
 public class Decider {
 
     CLI cli;
-    IOManager ioManager;
-    List<Task> tasks;
+    DatabaseManager dmanager;
+    List<String> tasks;
 
-    public Decider(CLI cli, IOManager ioManager, List<Task> tasks) {
+    public Decider(CLI cli, DatabaseManager dmanager, List<String> tasks) {
         this.cli = cli;
-        this.ioManager = ioManager;
+        this.dmanager = dmanager;
         this.tasks = tasks;
     }
 
@@ -19,24 +19,27 @@ public class Decider {
             return;
         }
 
+/*        //-a   Adds a new task
         if (args[0].equals("-a")) {
             try {
-                tasks.add(new Task("[ ]" + " " + args[1]));
-                ioManager.writeData(tasks);
+                tasks.add(new Task(args[1]));
+                dmanager.save(tasks);
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("Unable to add: no task provided!");
             }
-        }
+        }*/
+
+       //-l   Lists all the tasks
 
         if (args[0].equals("-l")) {
-            int counter = 1;
 
-            for (Task taski : tasks) {
-                System.out.println(counter + ". " + taski.getName());
-                counter++;
+            for (String taski : tasks) {
+                System.out.println(taski);
             }
         }
 
+        /*
+        //-lo  Lists all unfinished tasks
         if (args[0].equals("-lo")) {
             int counter = 1;
 
@@ -48,6 +51,7 @@ public class Decider {
             }
         }
 
+        //lx  Lists all finished tasks
         if (args[0].equals("-lx")) {
             int counter = 1;
 
@@ -59,6 +63,7 @@ public class Decider {
             }
         }
 
+        //-c   Completes a task
         if (args[0].equals("-c")) {
             int completedIndex = Integer.parseInt(args[1]) - 1;
 
@@ -75,6 +80,7 @@ public class Decider {
             }
         }
 
+        //-r   Removes a task
         if (args[0].equals("-r")) {
 
             int removeIndex;
@@ -96,6 +102,6 @@ public class Decider {
             } catch (NumberFormatException e) {
                 System.out.println("Unable to remove: index is not a number");
             }
-        }
+        }*/
     }
 }

@@ -1,9 +1,8 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Task {
 
+    int id;
     String nameOfTask;
+    String date;
     boolean finished;
 
     public Task() {
@@ -11,28 +10,38 @@ public class Task {
 
     public Task(String nameOfTask) {
         this.nameOfTask = nameOfTask;
+        finished = false;
     }
 
-    public List<Task> getTasks(IOManager ioManager) {
+    public int getId() {
+        return id;
+    }
 
-        List<Task> tasks = new ArrayList<>();
-        List<String> writenTasks = new ArrayList<>(ioManager.readFile());
+    public void setId(int id) {
+        this.id = id;
+    }
 
-        for (String line : writenTasks) {
-            tasks.add(new Task(line));
-        }
-        return tasks;
+    public String getNameOfTask() {
+        return nameOfTask;
+    }
+
+    public void setNameOfTask(String nameOfTask) {
+        this.nameOfTask = nameOfTask;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public boolean isFinished() {
-        if (nameOfTask.contains("[X]")) {
-            return finished = true;
-        } else {
-            return finished = false;
-        }
+        return finished;
     }
 
-    public String getName() {
-        return nameOfTask;
+    public void setFinished(boolean finished) {
+        this.finished = finished;
     }
 }
