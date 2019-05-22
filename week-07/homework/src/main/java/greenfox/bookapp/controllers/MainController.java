@@ -64,13 +64,13 @@ public class MainController {
     }
 
     @RequestMapping(path = "/books/add", method = RequestMethod.GET)
-    public String addBookForm(Model model, @ModelAttribute(name="book") Book book) {
+    public String addBookForm(Model model, @ModelAttribute(name = "book") Book book) {
         model.addAttribute("book", book);
         return "create";
     }
 
     @RequestMapping(path = "/books/add", method = RequestMethod.POST)
-    public String addBook(@ModelAttribute(name="book") Book book) {
+    public String addBook(@ModelAttribute(name = "book") Book book) {
         library.add(book);
         return "redirect:/books";
     }

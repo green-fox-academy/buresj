@@ -29,7 +29,7 @@ public class Decider {
             }
         }*/
 
-       //-l   Lists all the tasks
+        //-l   Lists all the tasks
 
         if (args[0].equals("-l")) {
 

@@ -1,4 +1,5 @@
 package day3.excercise.models;
+
 import day3.excercise.models.MyColor;
 import org.springframework.beans.factory.annotation.Qualifier;
 

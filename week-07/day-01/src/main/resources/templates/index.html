@@ -11,20 +11,20 @@
 <h1>Bank of Simba</h1><br>
 
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Index</th>
-            <th>Name</th>
-            <th>Balance</th>
-            <th>Animal type</th>
-            <th>Royal</th>
-            <th>Good or bad?</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="acc : ${accounts}">
-            <form action="#" th:action="@{/increment/{path}(path=${acc.getId()})}" method="get">
+<table class="table">
+    <thead>
+    <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Animal type</th>
+        <th>Royal</th>
+        <th>Good or bad?</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="acc : ${accounts}">
+        <form action="#" th:action="@{/increment/{path}(path=${acc.getId()})}" method="get">
             <td th:text="${acc.getId()}"></td>
             <td th:text="${acc.getName()}"></td>
             <td th:text="'Ƶ ' + ${#numbers.formatDecimal(acc.getBalance(), 0, 'COMMA', 2, 'POINT')}"></td>
@@ -32,19 +32,19 @@
             <td th:utext="${acc.isKing()} ? '<b>King</b>' : 'Not a king'"></td>
             <td th:text="${acc.getMorality()}"></td>
             <td><input type="submit" value="Increment"></td>
-            </form>
-        </tr>
-        <tr>
-            <form action="#" th:action="@{/add}" th:object="${newAccount}" method="post">
-                <td><input type="number" th:field="*{id}"></td>
-                <td><input type="text" th:field="*{name}"></td>
-                <td><input type="number" th:field="*{balance}"></td>
-                <td><input type="text" th:field="*{animalType}"></td>
-                <td><input type="text" th:field="*{morality}"></td>
-                <td><input type="submit" value="Add new acount"></td>
-            </form>
-        </tr>
-        </tbody>
-    </table>
+        </form>
+    </tr>
+    <tr>
+        <form action="#" th:action="@{/add}" th:object="${newAccount}" method="post">
+            <td><input type="number" th:field="*{id}"></td>
+            <td><input type="text" th:field="*{name}"></td>
+            <td><input type="number" th:field="*{balance}"></td>
+            <td><input type="text" th:field="*{animalType}"></td>
+            <td><input type="text" th:field="*{morality}"></td>
+            <td><input type="submit" value="Add new acount"></td>
+        </form>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

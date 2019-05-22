@@ -1,6 +1,8 @@
 package day3.excercise.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -33,9 +35,9 @@ public class UtilityService {
         }
 
         String result = "";
-        for(int i = 0; i < text.length(); i++) {
+        for (int i = 0; i < text.length(); i++) {
             int offset = Character.isUpperCase(text.charAt(i)) ? 'A' : 'a';
-            result += (char)(((int)text.charAt(i) + number - offset) % 26 + offset);
+            result += (char) (((int) text.charAt(i) + number - offset) % 26 + offset);
         }
         return result;
     }
