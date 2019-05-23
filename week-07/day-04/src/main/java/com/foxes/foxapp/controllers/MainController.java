@@ -20,12 +20,17 @@ public class MainController {
     List<Fox> foxes;
 
     public MainController() {
-        this.foxes =  new ArrayList<>(Arrays.asList(new Fox("Foxi")));
+        this.foxes =  new ArrayList<>(Arrays.asList(new Fox("Foxi", "pizza","jumps")));
     }
 
     @RequestMapping(path = "/")
     public String show(Model model, @RequestParam(required = false) String name) {
-        model.addAttribute("name", name);
+
+        if(name.equals(foxes.get(0).getName())) {
+            model.addAttribute("name", foxes.get(0).getName());
+            model.addAttribute("food", foxes.get(0).getDrink());
+            model.addAttribute("drink", foxes.get(0).getFood());
+        }
         return "index";
     }
 
@@ -36,6 +41,7 @@ public class MainController {
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
     public String loginPost(@RequestParam(required = false) String name) {
+
         return "redirect:/?name=" + name;
     }
 

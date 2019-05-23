@@ -16,6 +16,13 @@ public class Fox {
         this.drink = drink;
     }
 
+    public Fox(String name, String food, String drink) {
+        this.name = name;
+        this.food = food;
+        this.drink = drink;
+    }
+
+
     public Fox() {
     }
 

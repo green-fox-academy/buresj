@@ -7,6 +7,12 @@
 </head>
 <body>
 <img th:src="@{/img/greenfox.png}" alt="fox"/>
-<p th:text="${name}"></p>
+
+<p th:text="'This is '
+
++ ${name} + '. Currently living on '
++ ${food} + ' and '
++ ${drink}"></p>
+
 </body>
 </html>
