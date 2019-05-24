@@ -25,5 +25,4 @@ public class ExcerciseApplication implements CommandLineRunner {
         printer.log("Hi");
         myColor.printColor();
     }
-
 }

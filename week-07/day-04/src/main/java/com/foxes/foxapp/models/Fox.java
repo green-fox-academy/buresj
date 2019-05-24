@@ -1,5 +1,4 @@
 package com.foxes.foxapp.models;
-
 import java.util.List;
 
 public class Fox {
@@ -21,7 +20,6 @@ public class Fox {
         this.food = food;
         this.drink = drink;
     }
-
 
     public Fox() {
     }

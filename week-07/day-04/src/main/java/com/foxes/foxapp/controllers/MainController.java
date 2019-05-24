@@ -3,10 +3,7 @@ package com.foxes.foxapp.controllers;
 import com.foxes.foxapp.models.Fox;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,13 +14,14 @@ import java.util.List;
 public class MainController {
 
 
+    String user;
     List<Fox> foxes;
 
     public MainController() {
-        this.foxes =  new ArrayList<>(Arrays.asList(new Fox("Foxi", "pizza","jumps")));
+        this.foxes =  new ArrayList<>(Arrays.asList(new Fox("Foxi", "lemons","lemonade")));
     }
 
-    @RequestMapping(path = "/")
+    @GetMapping("/")
     public String show(Model model, @RequestParam(required = false) String name) {
 
         if(name.equals(foxes.get(0).getName())) {
@@ -40,9 +38,26 @@ public class MainController {
     }
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public String loginPost(@RequestParam(required = false) String name) {
-
+    public String handleName(@RequestParam(required = false) String name) {
+        name = user;
         return "redirect:/?name=" + name;
+    }
+
+    @GetMapping("/nav")
+    public String openNutrition() {
+        return "redirect:/nutrition/?name=" + user;
+    }
+
+    @GetMapping("/nutrition/")
+    public String changeNutrition (Model model, @RequestParam String name){
+        return "nutrition";
+    }
+
+    @GetMapping("/change-nutrition/")
+    public String changeNutrition (Model model, @RequestParam String name){
+
+
+        return "nutrition";
     }
 
 }

@@ -1,10 +1,8 @@
 
-# JIRI BURES' REPOSITORIES
+# REPOSITORIES
 
-## [Todo App project](https://github.com/buresj/todoApp)
-
-## [Diary project](https://github.com/buresj/projectDiary)
+## [Todo App 2.0 (v.24.5./SpringBoot)](https://github.com/buresj/ToDoApp2.0)
 
 ## [Wanderer game](https://github.com/buresj/wanderer-java)
 
-## [Personal Web](https://github.com/buresj/personalWebsite)
+## [Personal Web (Jekyll/Ruby)](https://github.com/buresj/buresj.github.io)
