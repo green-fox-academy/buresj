@@ -41,11 +41,10 @@ public class ShopItemStore {
     }
 
     public List<ShopItem> cheapestFirst() {
-        List<ShopItem> ascendingItems = store.stream()
+        return store.stream()
                 .sorted(Comparator.comparingInt(ShopItem::getPrice))
                 .collect(Collectors.toList());
 
-        return ascendingItems;
     }
 
     public List<ShopItem> mostExpensive() {
@@ -66,19 +65,16 @@ public class ShopItemStore {
         return nikedList;
     }
 
-    public Double averageStock() {
-        double avarage = store.stream()
+    public double averageStock() {
+        return store.stream()
                 .mapToDouble(i -> i.getQuantityOfStock())
                 .average()
                 .getAsDouble();
-
-        return avarage;
     }
 
-    public List<ShopItem> searchItems (String searchInput) {
-        List<ShopItem> foundList = store.stream()
+    public List<ShopItem> searchItems(String searchInput) {
+        return store.stream()
                 .filter(i -> i.getDescription().contains(searchInput) || i.getName().contains(searchInput))
                 .collect(Collectors.toList());
-        return foundList;
     }
 }

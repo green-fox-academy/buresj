@@ -23,7 +23,6 @@
 //        Remove all elements
 
 
-
 import java.util.ArrayList;
 
 public class ListIntro {
@@ -47,8 +46,8 @@ public class ListIntro {
 
         System.out.println(names.get(2));
 
-        for (String name: names
-             ) {
+        for (String name : names
+        ) {
             System.out.println(name);
         }
 

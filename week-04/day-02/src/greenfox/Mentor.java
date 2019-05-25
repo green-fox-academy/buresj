@@ -4,7 +4,7 @@ public class Mentor extends Person {
 
     String level;
 
-    public Mentor () {
+    public Mentor() {
         super();
     }
 
@@ -17,6 +17,7 @@ public class Mentor extends Person {
         this.level = level;
 
     }
+
     @Override
     public void getGoal() {
         System.out.println("My goal is: Educate brilliant junior software developers.");

@@ -18,10 +18,10 @@ public class UrlFixer {
         String correctedHttps = https + "://";
         System.out.println(correctedHttps);
 
-        String www = url.substring(7,21);
+        String www = url.substring(7, 21);
         System.out.println(www);
 
-        String reddit = url.substring(21,24);
+        String reddit = url.substring(21, 24);
         System.out.println(reddit);
 
         String nevertellmethe = url.substring(24, 38);

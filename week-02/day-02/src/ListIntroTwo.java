@@ -12,7 +12,7 @@ public class ListIntroTwo {
 
         listB.remove("Durian");
 
-        listA.set(4,"Kiwifruit");
+        listA.set(4, "Kiwifruit");
 
         System.out.println(listA.equals(listB));
 

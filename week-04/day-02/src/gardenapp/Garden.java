@@ -42,7 +42,7 @@ public class Garden extends Flora {
 
         for (Flora flora : florae) {
 
-            if(flora.waterAmount > 20){
+            if (flora.waterAmount > 20) {
                 flora.needsWater = false;
             }
             if (flora.needsWater) {

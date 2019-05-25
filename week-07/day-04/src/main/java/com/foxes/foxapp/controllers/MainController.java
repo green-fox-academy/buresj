@@ -18,13 +18,13 @@ public class MainController {
     List<Fox> foxes;
 
     public MainController() {
-        this.foxes =  new ArrayList<>(Arrays.asList(new Fox("Foxi", "lemons","lemonade")));
+        this.foxes = new ArrayList<>(Arrays.asList(new Fox("Foxi", "lemons", "lemonade")));
     }
 
     @GetMapping("/")
     public String show(Model model, @RequestParam(required = false) String name) {
 
-        if(name.equals(foxes.get(0).getName())) {
+        if (name.equals(foxes.get(0).getName())) {
             model.addAttribute("name", foxes.get(0).getName());
             model.addAttribute("food", foxes.get(0).getDrink());
             model.addAttribute("drink", foxes.get(0).getFood());
@@ -49,12 +49,12 @@ public class MainController {
     }
 
     @GetMapping("/nutrition/")
-    public String changeNutrition (Model model, @RequestParam String name){
+    public String changeNutrition(Model model, @RequestParam String name) {
         return "nutrition";
     }
 
     @GetMapping("/change-nutrition/")
-    public String changeNutrition (Model model, @RequestParam String name){
+    public String changeNutrition(Model model, @RequestParam String name) {
 
 
         return "nutrition";

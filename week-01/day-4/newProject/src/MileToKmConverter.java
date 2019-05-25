@@ -11,7 +11,7 @@ public class MileToKmConverter {
 
         userInput1 *= 0.621371;
 
-        System.out.println("Miles: " +   userInput1);
+        System.out.println("Miles: " + userInput1);
 
         // Write a program that asks for an integer that is a distance in kilometers,
         // then it converts that value to miles and prints it

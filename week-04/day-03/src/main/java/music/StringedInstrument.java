@@ -15,7 +15,7 @@ abstract class StringedInstrument extends Instrument {
 
     public abstract String sound();
 
-    public void play(){
+    public void play() {
         System.out.println();
     }
 }

@@ -49,8 +49,8 @@ public class SquaresInSquares {
 
         if (size >= 1) {
 
-            nx = base/3;
-            nsize = size/3;
+            nx = base / 3;
+            nsize = size / 3;
             ny = 0;
 
             g.drawRect(nx, ny, nsize, nsize);

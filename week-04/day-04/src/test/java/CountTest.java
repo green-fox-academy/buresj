@@ -25,7 +25,7 @@ public class CountTest {
         Count count = new Count();
         int result = count.sum(nums);
 
-        assertEquals(6,result);
+        assertEquals(6, result);
     }
 
     @Test
@@ -35,7 +35,7 @@ public class CountTest {
         Count count = new Count();
         int result = count.sum(nums);
 
-        assertEquals(0,result);
+        assertEquals(0, result);
     }
 
     @Test
@@ -47,6 +47,6 @@ public class CountTest {
         Count count = new Count();
         int result = count.sum(nums);
 
-        assertEquals(1,result);
+        assertEquals(1, result);
     }
 }

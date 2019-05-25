@@ -28,7 +28,7 @@ public class VariableMutation {
         System.out.println(d);
 
         int e = 8;
-        e *=  8;
+        e *= 8;
 
         // please cube of e's value
 
@@ -52,8 +52,8 @@ public class VariableMutation {
         // tell if the double of g2 is bigger than g1 (print as a boolean)
 
         int h = 135798745;
-        int h1 = h/11;
-        int h2 = h/h1;
+        int h1 = h / 11;
+        int h2 = h / h1;
         boolean hh = h2 == 11;
         System.out.println(hh);
 
@@ -77,7 +77,6 @@ public class VariableMutation {
         boolean jj = ((j %= 3) == 0) || ((j %= 5) == 0);
 
         System.out.println(jj);
-
 
 
         // tell if j is dividable by 3 or 5 (print as a boolean)

@@ -14,7 +14,7 @@ public class PurpleSteps3d {
 
         for (int i = 1; i <= 5; i++) {
 
-            graphics.fillRect(0,0, 10,10);
+            graphics.fillRect(0, 0, 10, 10);
 
             size *= 2;
 

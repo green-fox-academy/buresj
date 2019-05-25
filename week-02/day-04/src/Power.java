@@ -5,11 +5,11 @@
 public class Power {
     public static void main(String[] args) {
 
-        System.out.println(powerN(3,2));
+        System.out.println(powerN(3, 2));
 
     }
 
-    public static int powerN(int n, int p){
+    public static int powerN(int n, int p) {
 
         if (p == 0) {
             return 1;

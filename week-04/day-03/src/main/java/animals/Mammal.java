@@ -1,6 +1,6 @@
 package main.java.animals;
 
-public class Mammal extends Animal{
+public class Mammal extends Animal {
 
     String reproduction = "giving birth";
 

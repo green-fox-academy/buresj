@@ -13,8 +13,8 @@ public class MapIntro {
         map.put(67, "C");
 
 
-        for (Integer keys:
-             map.keySet()) {
+        for (Integer keys :
+                map.keySet()) {
             System.out.println(keys);
         }
 
@@ -31,8 +31,8 @@ public class MapIntro {
 
         map.remove(97);
 
-        if(map.get(100) == null){
-        System.out.println("Nothing there!");
+        if (map.get(100) == null) {
+            System.out.println("Nothing there!");
         }
 
         map.clear();

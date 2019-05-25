@@ -1,4 +1,5 @@
 package com.foxes.foxapp.models;
+
 import java.util.List;
 
 public class Fox {

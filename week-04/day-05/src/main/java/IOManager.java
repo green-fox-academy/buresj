@@ -7,36 +7,36 @@ import java.util.List;
 
 public class IOManager {
 
-        Path path;
+    Path path;
 
-        public IOManager(String fileName) {
-            this.path = Paths.get("assets/" + fileName);
+    public IOManager(String fileName) {
+        this.path = Paths.get("assets/" + fileName);
+    }
+
+    public List<String> readFile() {
+
+        List<String> content = new ArrayList<>();
+
+        try {
+            content = Files.readAllLines(this.path);
+        } catch (IOException e) {
+            System.out.println("Cannot read file");
+        }
+        return content;
+    }
+
+    public void writeData(List<Task> data) {
+
+        List<String> stringyList = new ArrayList<>();
+
+        for (Task task : data) {
+            stringyList.add(task.getName());
         }
 
-        public List<String> readFile() {
-
-            List<String> content = new ArrayList<>();
-
-            try {
-                content = Files.readAllLines(this.path);
-            } catch (IOException e) {
-                System.out.println("Cannot read file");
-            }
-            return content;
-        }
-
-        public void writeData(List<Task> data) {
-
-            List<String> stringyList = new ArrayList<>();
-
-            for (Task task: data) {
-                stringyList.add(task.getName());
-            }
-
-            try {
-                Files.write(path, stringyList);
-            } catch (IOException e) {
-                System.out.println("Cannot write file.");
-            }
+        try {
+            Files.write(path, stringyList);
+        } catch (IOException e) {
+            System.out.println("Cannot write file.");
         }
     }
+}

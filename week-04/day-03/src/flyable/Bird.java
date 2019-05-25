@@ -1,4 +1,5 @@
 package flyable;
+
 import main.java.animals.*;
 
 public class Bird extends main.java.animals.Bird implements Flyable {

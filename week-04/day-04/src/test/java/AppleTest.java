@@ -16,6 +16,6 @@ public class AppleTest {
         Apple apple = new Apple();
         String result = apple.getApple();
 
-        assertEquals("apple",result);
+        assertEquals("apple", result);
     }
 }

@@ -35,7 +35,7 @@ public class AnimalTest {
         animal.play();
         animal.play();
 
-        if (animal.hunger > 50 && animal.thirst > 50){
+        if (animal.hunger > 50 && animal.thirst > 50) {
             result = true;
         }
         assertTrue(result);

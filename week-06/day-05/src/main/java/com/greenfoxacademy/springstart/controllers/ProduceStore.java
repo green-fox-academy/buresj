@@ -3,6 +3,7 @@ package com.greenfoxacademy.springstart.controllers;
 import com.greenfoxacademy.springstart.models.ShopItemStore;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,10 +13,10 @@ public class ProduceStore {
 
     ShopItemStore store = new ShopItemStore();
 
-    @RequestMapping("/store")
+    @GetMapping("/store")
     public String produce(Model model) {
-
         model.addAttribute("store", store.getAll());
+
         return "index";
     }
 
@@ -26,7 +27,7 @@ public class ProduceStore {
         return "index";
     }
 
-    @RequestMapping("/store/only-available")
+    @GetMapping("/store/only-available")
     public String produceStore(Model model) {
 
         model.addAttribute("store", store.avalaible());
@@ -40,7 +41,7 @@ public class ProduceStore {
         return "index";
     }
 
-    @RequestMapping("/store/most-expensive")
+    @GetMapping("/store/most-expensive")
     public String expensiveFirst(Model model) {
 
         model.addAttribute("store", store.mostExpensive());
@@ -54,8 +55,8 @@ public class ProduceStore {
         return "resultAvg";
     }
 
-    @RequestMapping("/store/search")
-    public String search(Model model, @RequestParam String search) {
+    @GetMapping("/store/search")
+    public String search(Model model, @RequestParam(required = false) String search) {
         model.addAttribute("store", store.searchItems(search));
         return "index";
     }

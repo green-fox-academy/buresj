@@ -7,7 +7,7 @@ public class AnagramTest {
 
     @Test
     public void initAnagram_initedAnagram() {
-        Anagram anagram = new Anagram("test","sett");
+        Anagram anagram = new Anagram("test", "sett");
         assertNotNull(anagram);
     }
 
@@ -15,9 +15,9 @@ public class AnagramTest {
     public void testIfAnagram_trueIfAnagram() {
 
         boolean result;
-        Anagram anagram = new Anagram("test","sett");
+        Anagram anagram = new Anagram("test", "sett");
         result = anagram.isAnagram();
 
-        assertEquals(true,result);
+        assertEquals(true, result);
     }
 }

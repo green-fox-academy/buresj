@@ -6,12 +6,12 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class FourRectangles {
 
-    public static void mainDraw(Graphics graphics){
+    public static void mainDraw(Graphics graphics) {
         // draw four different size and color rectangles.
         // avoid code duplication.
 
         for (int i = 1; i <= 4; i++) {
-            graphics.setColor(new Color(30 * i,30 * i,30 * i,150));
+            graphics.setColor(new Color(30 * i, 30 * i, 30 * i, 150));
             graphics.drawRect(10 * i, 10 * i, 10 * i, 10 * i);
         }
     }

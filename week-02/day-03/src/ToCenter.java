@@ -12,13 +12,13 @@ public class ToCenter {
         // Draw 3 lines with that function. Use loop for that.
 
         for (int i = 0; i <= 100; i++) {
-            centerIt(graphics, i, i );
+            centerIt(graphics, i, i);
         }
     }
 
     public static void centerIt(Graphics g, int x, int y) {
 
-        g.drawLine(x *=2, y *= 3, WIDTH / 2, HEIGHT / 2);
+        g.drawLine(x *= 2, y *= 3, WIDTH / 2, HEIGHT / 2);
     }
 
     // Don't touch the code below

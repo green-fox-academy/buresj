@@ -26,13 +26,8 @@ public class LineInTheMiddle {
 //        graphics.drawLine (HEIGHT, 0, 0, WIDTH);
 //        graphics.drawLine (HEIGHT, 25, 0, WIDTH + 25);
 
-        graphics.drawLine(0, 0, WIDTH/2, HEIGHT/2);
+        graphics.drawLine(0, 0, WIDTH / 2, HEIGHT / 2);
     }
-
-
-
-
-
 
 
     // Don't touch the code below

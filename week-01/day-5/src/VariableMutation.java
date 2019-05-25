@@ -30,7 +30,7 @@ public class VariableMutation {
         System.out.println(d);
 
         int e = 8;
-        e *=  8;
+        e *= 8;
         System.out.println(e);
 
         int f1 = 123;
@@ -44,8 +44,8 @@ public class VariableMutation {
         System.out.println(g);
 
         int h = 135798745;
-        int h1 = h/11;
-        int h2 = h/h1;
+        int h1 = h / 11;
+        int h2 = h / h1;
         boolean hh = h2 == 11;
         System.out.println(hh);
 

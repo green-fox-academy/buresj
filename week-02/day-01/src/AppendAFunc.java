@@ -17,7 +17,7 @@ public class AppendAFunc {
         System.out.println(corrected);
     }
 
-    public static String appendAFunc (String input) {
+    public static String appendAFunc(String input) {
 
         return input += "a";
     }

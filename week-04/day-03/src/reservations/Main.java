@@ -9,8 +9,8 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             System.out.println(
                     String.format("Booking### %1s for %2s",
-                    reservation.getCodeBooking(),
-                    reservation.getDowBooking()));
+                            reservation.getCodeBooking(),
+                            reservation.getDowBooking()));
         }
     }
 }

@@ -39,7 +39,7 @@ public class Student {
         skippedDays = 0;
     }
 
-    public void getGoal () {
+    public void getGoal() {
         System.out.println("Be a junior software develpper.");
     }
 
@@ -48,7 +48,7 @@ public class Student {
                 + previousOrganization + " who skipped " + skippedDays + " from the course already.");
     }
 
-    public void skipDays (int numberOfDays) {
+    public void skipDays(int numberOfDays) {
         skippedDays += numberOfDays;
     }
 }

@@ -1,6 +1,6 @@
 body {
     font-family: 'Open sans', Courier, monospace;
-    margin: 0; 
+    margin: 0;
 }
 
 .header {
@@ -11,7 +11,7 @@ body {
 
 h1 {
     font-size: 22px;
-    margin-left: 50px; 
+    margin-left: 50px;
 }
 
 h2 {
@@ -20,10 +20,10 @@ h2 {
 
 main {
     padding-left: 50px;
-    padding-right: 100px; 
+    padding-right: 100px;
     background: #deffdd;
     width: 800px;
-    position: relative;    
+    position: relative;
 }
 
 .button {

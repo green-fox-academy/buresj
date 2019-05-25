@@ -31,16 +31,16 @@ public class Doubled {
 
         for (String line : lines) {
 
-                line = line.concat("!");
+            line = line.concat("!");
 
-                for (int i = 0; i < line.length(); i++) {
-                    if (i % 2 == 0) {
-                        charList.add(line.charAt(i));
-                    }
-                    if (line.equals("!")) {
-                        charList.add(i, '!');
-                    }
+            for (int i = 0; i < line.length(); i++) {
+                if (i % 2 == 0) {
+                    charList.add(line.charAt(i));
                 }
+                if (line.equals("!")) {
+                    charList.add(i, '!');
+                }
+            }
         }
 
         String string;

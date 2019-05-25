@@ -15,10 +15,5 @@ public class HelloUser {
         String userInput1 = scanner.nextLine();
 
 
-
-
-
-
-
     }
 }

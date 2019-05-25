@@ -21,7 +21,7 @@ public class Strings {
         System.out.println(ourClass.length());
 
         // Cut off the first three character
-        System.out.println(ourClass.substring(2,5));
+        System.out.println(ourClass.substring(2, 5));
 
         // How to replace content?
         ourClass = ourClass.replace("S", "p");
@@ -38,7 +38,7 @@ public class Strings {
 
         // Split the text by space
         String[] splitted = ourClass.split(" ");
-        for (String word :splitted) {
+        for (String word : splitted) {
             System.out.print(word);
         }
 
@@ -46,7 +46,7 @@ public class Strings {
 
         // Put together:
         String together = "";
-        for (String word :splitted) {
+        for (String word : splitted) {
             together += word;
         }
         System.out.println(together);

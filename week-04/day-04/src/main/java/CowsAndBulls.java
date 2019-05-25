@@ -9,14 +9,14 @@ public class CowsAndBulls {
         this.code = code;
     }
 
-    public List<String> guess (int one, int two, int three, int four) {
+    public List<String> guess(int one, int two, int three, int four) {
 
         int[] guess = {one, two, three, four};
         List<String> result = new ArrayList<>();
 
         for (int i = 0; i < guess.length; i++) {
             for (int j = 0; j < guess.length; j++) {
-                if(code[i] == guess[j] && i != j) {
+                if (code[i] == guess[j] && i != j) {
                     result.add("Bull");
                 } else if (code[i] == guess[j] && i == j) {
                     result.add("Cow");

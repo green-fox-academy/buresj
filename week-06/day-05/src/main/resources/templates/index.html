@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="../static/styles.css"/>
@@ -16,12 +18,12 @@
     <li><a href="http://localhost:8080/store/average-stock">Average stock</a></li>
 </ul>
 
-<form method="post" action="/store/search">
-    <input type ="text" name="search" placeholder="....">
+<form method="get" action="/store/search">
+    <input type="text" name="search" placeholder="....">
     <button type="submit">Search</button>
 </form>
 
-<table>
+<table class="table">
     <thead>
     <tr>
         <th>Name</th>

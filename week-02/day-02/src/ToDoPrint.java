@@ -11,7 +11,7 @@
 
 
 public class ToDoPrint {
-    public static void main(String... args){
+    public static void main(String... args) {
 
         String todoText = "My todo: \n" + "- Buy milk\n" + "- Dowload games\n" + "\t- Diablo";
 

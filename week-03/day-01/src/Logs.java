@@ -62,6 +62,6 @@ public class Logs {
             }
             size++;
         }
-        return size/counter;
+        return size / counter;
     }
 }

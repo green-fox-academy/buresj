@@ -19,8 +19,8 @@ public class RainbowBoxFunction {
                         (int) (Math.random() * 256),
                         (int) (Math.random() * 256));
                 rainbow(graphics, 5, color,
-                        (int) (Math.random()*WIDTH),
-                        (int) (Math.random()*HEIGHT));
+                        (int) (Math.random() * WIDTH),
+                        (int) (Math.random() * HEIGHT));
             }
         }
     }

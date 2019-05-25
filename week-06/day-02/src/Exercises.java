@@ -74,12 +74,12 @@ public class Exercises {
         System.out.println(str);
 
         //Ex 9: Write a Stream Expression to find the frequency of characters in a given string!
-       String word = "umbadghuom";
+        String word = "umbadghuom";
 
-       //Count frequency of a concrete character
-       long count = word.chars()
-               .filter(c -> c == 'u')
-               .count();
+        //Count frequency of a concrete character
+        long count = word.chars()
+                .filter(c -> c == 'u')
+                .count();
         System.out.println(count);
 
         //Count frequency of all characters

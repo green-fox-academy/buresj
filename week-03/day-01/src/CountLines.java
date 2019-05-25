@@ -12,10 +12,10 @@ public class CountLines {
     public static void main(String[] args) {
 
         try {
-        Path filePath = Paths.get("assets/lorem.txt");
-        List<String> lines = Files.readAllLines(filePath);
+            Path filePath = Paths.get("assets/lorem.txt");
+            List<String> lines = Files.readAllLines(filePath);
 
-        System.out.println(lines.size());
+            System.out.println(lines.size());
 
         } catch (Exception e) {
             System.out.println("File is not accessible");

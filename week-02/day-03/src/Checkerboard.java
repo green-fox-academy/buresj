@@ -27,7 +27,7 @@ public class Checkerboard {
                     }
                 } else if (!evenColumn) {
 
-                        miniRect(graphics, row, column);
+                    miniRect(graphics, row, column);
 
                 }
             }

@@ -34,7 +34,7 @@ public class ArrayLists {
         System.out.println(animals);
 
         // I want to set the first value to "tiger
-        animals.set(0,"tiger");
+        animals.set(0, "tiger");
         System.out.println(animals);
 
         // I want to know if my list contains "bear"

@@ -8,12 +8,13 @@
 //  31
 //  1.87
 
-public class IntroduceYourself { public static void main(String[] args) {
+public class IntroduceYourself {
+    public static void main(String[] args) {
 
-    System.out.println("Jiri Bures");
-    System.out.println(31);
-    System.out.println(1.80);
+        System.out.println("Jiri Bures");
+        System.out.println(31);
+        System.out.println(1.80);
 
 
-}
+    }
 }
