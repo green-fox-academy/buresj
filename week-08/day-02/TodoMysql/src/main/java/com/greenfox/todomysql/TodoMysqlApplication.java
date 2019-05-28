@@ -19,7 +19,7 @@ public class TodoMysqlApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        repo.save(new Todo("Do stuff!", true, false));
-        repo.save(new Todo("Do more stuff!", false, true ));
+//        repo.save(new Todo("Do stuff!", true, false));
+//        repo.save(new Todo("Do more stuff!", false, true ));
     }
 }
