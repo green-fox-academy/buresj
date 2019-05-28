@@ -39,7 +39,6 @@ public class TodoController {
         return "redirect:/";
     }
 
-
     @GetMapping({"/edit/{id}"})
     public String edit(Model model, @PathVariable(name = "id") Integer id) {
         model.addAttribute("updateTodo", repo.findById(new Long(id)));
