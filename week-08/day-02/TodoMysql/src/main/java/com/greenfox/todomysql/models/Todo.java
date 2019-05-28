@@ -12,7 +12,7 @@ public class Todo {
     long id;
 
     private String title;
-    private boolean urgent = false;
+    private boolean urgent;
     private boolean done = false;
 
 
