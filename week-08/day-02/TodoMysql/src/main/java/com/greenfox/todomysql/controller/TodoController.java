@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class TodoController {
 
-    TodoRepo repo;
+    private TodoRepo repo;
 
     @Autowired
     public TodoController(TodoRepo repo){
@@ -46,12 +46,15 @@ public class TodoController {
         return "edit";
     }
 
+    @GetMapping({"/detail/{id}"})
+    public String detail(Model model, @PathVariable(name = "id") Integer id) {
+        model.addAttribute("detailTodo", repo.findById(new Long(id)));
+        return "detail";
+    }
+
     @PostMapping({"/save"})
     public String save(@ModelAttribute Todo todo) {
         repo.save(todo);
         return "redirect:/";
     }
-
-
-
 }
