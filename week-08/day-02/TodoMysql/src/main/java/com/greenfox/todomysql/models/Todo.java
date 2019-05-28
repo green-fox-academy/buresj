@@ -1,12 +1,7 @@
 package com.greenfox.todomysql.models;
-
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.hibernate.annotations.CreationTimestamp;
+import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 public class Todo {
@@ -19,8 +14,14 @@ public class Todo {
     private boolean urgent;
     private boolean done = false;
 
+    @CreationTimestamp
+    private Date created;
 
     public Todo() {
+    }
+
+    public Date getCreated() {
+        return created;
     }
 
     public Todo(String title) {

@@ -14,6 +14,7 @@
     <tr>
         <th>Id</th>
         <th>Task</th>
+        <th>Date</th>
         <th>Urgent</th>
         <th>Done</th>
     </tr>
@@ -23,6 +24,7 @@
         th:style="${todo.isUrgent()} ? 'background-image: linear-gradient(to right, #f0cece, #e6b1b3, #db9598, #cf7880, #c25b68);' : 'background-image: linear-gradient(to right, #bdedbf, #a7e3a7, #92d88e, #7dcd75, #68c25b);'">
         <td th:text="${todo.getId()}"></td>
         <td><a th:href="@{'/detail/' + ${todo.getId()}}"><span th:text="${todo.getTitle()}"></span></a></td>
+        <td th:text="${todo.getCreated()}"></td>
         <td th:text="${todo.isUrgent()}"></td>
         <td th:text="${todo.isDone()}"></td>
         <td><a class="btn btn-success" th:href="@{'/remove/' + ${todo.getId()}}" role="button">Remove</a></td>
@@ -33,6 +35,7 @@
             <td></td>
             <td><input type="text" th:field="*{title}"></td>
             <td><input type="checkbox" th:field="*{urgent}" th:value="*{urgent}"></td>
+            <td></td>
             <td></td>
             <td><input type="submit" class="btn btn-info" value="To do"></td>
         </form>
