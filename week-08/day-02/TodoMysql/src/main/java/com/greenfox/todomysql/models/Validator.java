@@ -5,16 +5,19 @@ import com.greenfox.todomysql.repository.TodoRepo;
 import com.greenfox.todomysql.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
+@Service
 public class Validator {
 
     private TodoRepo repo;
     private UserRepo userRepo;
 
+    @Autowired
     public Validator(@Qualifier("todo") TodoRepo repo, @Qualifier("user") UserRepo userRepo) {
         this.repo = repo;
         this.userRepo = userRepo;

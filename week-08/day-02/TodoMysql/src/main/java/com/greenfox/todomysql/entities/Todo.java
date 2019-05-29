@@ -1,6 +1,7 @@
 package com.greenfox.todomysql.entities;
-import lombok.Getter;
+
 import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import java.sql.Date;
 
@@ -11,23 +12,14 @@ public class Todo {
     @GeneratedValue
     private long id;
 
+    private long userId;
     private String title;
     private boolean urgent;
     private boolean done = false;
 
-    public String getUser() {
-        return user;
+    public void setUserId(long userID) {
+        this.userId = userID;
     }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    private String user;
 
     @CreationTimestamp
     private Date created;
@@ -39,11 +31,12 @@ public class Todo {
         return created;
     }
 
-    @Override
-    public String toString() {
-        return "Task: " + title + ", "
-                + "Urgent: " + urgent + ", " +
-                "Done: " + done;
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public long getUserId() {
+        return userId;
     }
 
     public long getId() {
@@ -77,4 +70,12 @@ public class Todo {
     public void setDone(boolean done) {
         this.done = done;
     }
+
+    @Override
+    public String toString() {
+        return "Task: " + title + ", "
+                + "Urgent: " + urgent + ", " +
+                "Done: " + done;
+    }
+
 }
