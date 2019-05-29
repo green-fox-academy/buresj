@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <meta charset="UTF-8">
+    <title>Login to Todo</title>
+</head>
+<body>
+<div class="container">
+    <h2>Log into application</h2>
+    <form action="/use" method="POST">
+        <div class="form-group">
+            <label>User name</label>
+            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter user">
+            <small class="form-text text-muted">Choose user name that exists.</small>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br>
+    <br>
+    <h2>Add new user</h2>
+    <form action="/login" th:object="${newUser}" method="POST">
+        <div class="form-group">
+            <label>User name</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter user" th:field="*{name}">
+            <small class="form-text text-muted">Choose user name that exists.</small>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="Password" th:field="*{password}">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>

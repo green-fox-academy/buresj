@@ -1,4 +1,5 @@
-package com.greenfox.todomysql.models;
+package com.greenfox.todomysql.entities;
+import lombok.Getter;
 import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.sql.Date;
@@ -8,11 +9,25 @@ public class Todo {
 
     @Id
     @GeneratedValue
-    long id;
+    private long id;
 
     private String title;
     private boolean urgent;
     private boolean done = false;
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    private String user;
 
     @CreationTimestamp
     private Date created;
