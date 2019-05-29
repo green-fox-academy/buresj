@@ -14,8 +14,8 @@ public class TodoMysqlApplication implements CommandLineRunner {
 //    @Autowired
 //    TodoRepo repo;
 
-    @Autowired
-    UserRepo userRepo;
+/*    @Autowired
+    UserRepo userRepo;*/
 
 
     public static void main(String[] args) {
@@ -26,6 +26,5 @@ public class TodoMysqlApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 //        repo.save(new Todo("Do stuff!", true, false));
 //        repo.save(new Todo("Do more stuff!", false, true ));
-        userRepo.save(new User("aa","aa"));
     }
 }

@@ -1,6 +1,7 @@
 package com.greenfox.todomysql.controller;
 import com.greenfox.todomysql.entities.Todo;
 import com.greenfox.todomysql.entities.User;
+import com.greenfox.todomysql.models.Validator;
 import com.greenfox.todomysql.repository.TodoRepo;
 import com.greenfox.todomysql.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +18,13 @@ public class MainController {
 
     private TodoRepo repo;
     private UserRepo userRepo;
+    private Validator val;
 
     @Autowired
     public MainController(@Qualifier("todo") TodoRepo repo,@Qualifier("user") UserRepo userRepo){
         this.repo = repo;
         this.userRepo = userRepo;
+        this.val = new Validator(repo,userRepo);
     }
 
     @GetMapping({"/","/list"})
@@ -37,20 +40,20 @@ public class MainController {
         return "redirect:/";
     }
 
-    @GetMapping("/remove/{id}")
+    @GetMapping("/{id}/remove")
     public String remove(Model model, @PathVariable(name = "id") Integer id) {
         model.addAttribute("newTodo", new Todo());
         repo.deleteById(new Long(id));
         return "redirect:/";
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable(name = "id") Integer id) {
         model.addAttribute("updateTodo", repo.findById(new Long(id)));
         return "edit";
     }
 
-    @GetMapping("/detail/{id}")
+    @GetMapping("/{id}/detail")
     public String detail(Model model, @PathVariable(name = "id") Integer id) {
         model.addAttribute("detailTodo", repo.findById(new Long(id)));
         return "detail";
@@ -65,12 +68,21 @@ public class MainController {
     @GetMapping("/login")
     public String login(Model model){
         model.addAttribute("newUser", new User());
+        model.addAttribute("user", new User());
         return "login";
     }
 
-    @PostMapping("/login")
-    public String addUser(@ModelAttribute User user){
+    @PostMapping("/create")
+    public String create (@ModelAttribute User user){
         userRepo.save(user);
+        return "redirect:/login";
+    }
+
+    @PostMapping("/test")
+    public String use(@ModelAttribute User user){
+        if (val.test(user)) {
+            return "redirect:/";
+        }
         return "redirect:/login";
     }
 }
