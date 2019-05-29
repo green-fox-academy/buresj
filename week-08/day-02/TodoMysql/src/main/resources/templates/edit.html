@@ -8,7 +8,6 @@
 
 <form action="/save" th:object="${updateTodo}" method="POST">
     <input type="text" th:field="*{title}">
-    <input type="text" th:field="*{user}">
     <input type="checkbox" th:field="*{urgent}">
     <td><input type="submit" class="btn btn-info" value="Update"></td>
 </form>

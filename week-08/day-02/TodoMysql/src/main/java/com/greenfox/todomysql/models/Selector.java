@@ -3,6 +3,7 @@ package com.greenfox.todomysql.models;
 import com.greenfox.todomysql.entities.Todo;
 import com.greenfox.todomysql.entities.User;
 import com.greenfox.todomysql.repository.TodoRepo;
+import com.greenfox.todomysql.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +15,12 @@ import java.util.stream.Collectors;
 public class Selector {
 
     private TodoRepo repo;
+    private UserRepo userRepo;
 
     @Autowired
-    public Selector (TodoRepo repo){
+    public Selector (TodoRepo repo, UserRepo userRepo){
         this.repo = repo;
+        this.userRepo = userRepo;
 
     }
 
@@ -32,11 +35,21 @@ public class Selector {
                 .collect(Collectors.toList());
     }
 
-    public List<User> userId (User user) {
+    public long userId (User user) {
         List<User> users = new ArrayList<>();
         for (User use :  userRepo.findAll()) {
             users.add(use);
         }
-        return users;
+
+        User selected = users
+                .stream()
+                .filter(u -> u.getName().equals(user.getName()))
+                .findAny()
+                .orElse(null);
+
+        if(selected != null) {
+            return selected.getId();
+        }
+        return 0L;
     }
 }

@@ -17,23 +17,22 @@ public class MainController {
 
     private TodoRepo repo;
     private UserRepo userRepo;
-    private Validator val;
-    private Selector sel;
-    private User user;
+    private Validator validator;
+    private Selector selector;
     private long userId;
 
     @Autowired
     public MainController(@Qualifier("todo") TodoRepo repo, @Qualifier("user") UserRepo userRepo) {
         this.repo = repo;
         this.userRepo = userRepo;
-        this.val = new Validator(repo, userRepo);
-        this.sel = new Selector(repo);
+        this.validator = new Validator(repo, userRepo);
+        this.selector = new Selector(repo, userRepo);
     }
 
     @GetMapping({"/", "/list"})
-    public String list(Model model, @RequestParam String user) {
+    public String list(Model model, @RequestParam long user) {
         model.addAttribute("newTodo", new Todo());
-        model.addAttribute("todos", sel.show(userId));
+        model.addAttribute("todos", selector.show(user));
         return "index";
     }
 
@@ -41,14 +40,14 @@ public class MainController {
     public String add(@ModelAttribute Todo todo) {
         todo.setUserId(userId);
         repo.save(todo);
-        return "redirect:/";
+        return "redirect:/?user=" + userId;
     }
 
     @GetMapping("/{id}/remove")
     public String remove(Model model, @PathVariable(name = "id") Integer id) {
         model.addAttribute("newTodo", new Todo());
         repo.deleteById(new Long(id));
-        return "redirect:/";
+        return "redirect:/?user=" + userId;
     }
 
     @GetMapping("/{id}/edit")
@@ -64,9 +63,9 @@ public class MainController {
     }
 
     @PostMapping("/save")
-    public String save(@ModelAttribute Todo todo) {
+    public String save(@ModelAttribute Todo todo, @RequestParam long user) {
         repo.save(todo);
-        return "redirect:/";
+        return "redirect:/?user=" + userId;
     }
 
     @GetMapping("/login")
@@ -78,7 +77,7 @@ public class MainController {
 
     @PostMapping("/create")
     public String create(Model model, @ModelAttribute User user) {
-        if (!val.test(user)) {
+        if (!validator.test(user)) {
             userRepo.save(user);
             userId = user.getId();
             return "redirect:/login";
@@ -89,10 +88,9 @@ public class MainController {
 
     @PostMapping("/test")
     public String use( @ModelAttribute User user) {
-        if (val.test(user)) {
-            userRepo.findAll();
-            userId = user.getId();
-            return "redirect:/?user=" + user.getName();
+        if (validator.test(user)) {
+            userId = selector.userId(user);
+            return "redirect:/?user=" + userId;
         }
         return "redirect:/login";
     }
