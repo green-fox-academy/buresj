@@ -1,8 +1,8 @@
 package com.greenfox.todomysql.models;
 
 import com.greenfox.todomysql.entities.User;
-import com.greenfox.todomysql.repository.TodoRepo;
-import com.greenfox.todomysql.repository.UserRepo;
+import com.greenfox.todomysql.repositories.TodoRepo;
+import com.greenfox.todomysql.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -22,6 +22,8 @@ public class Validator {
         this.repo = repo;
         this.userRepo = userRepo;
     }
+
+    public Validator(){}
 
     public boolean test (User user) {
         List<User> users = new ArrayList<>();

@@ -2,8 +2,8 @@ package com.greenfox.todomysql.models;
 
 import com.greenfox.todomysql.entities.Todo;
 import com.greenfox.todomysql.entities.User;
-import com.greenfox.todomysql.repository.TodoRepo;
-import com.greenfox.todomysql.repository.UserRepo;
+import com.greenfox.todomysql.repositories.TodoRepo;
+import com.greenfox.todomysql.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +23,8 @@ public class Selector {
         this.userRepo = userRepo;
 
     }
+
+    public Selector(){}
 
     public List<Todo> show (Long userID) {
         List<Todo> todos = new ArrayList<>();

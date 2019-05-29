@@ -1,4 +1,4 @@
-package com.greenfox.todomysql.repository;
+package com.greenfox.todomysql.repositories;
 
 import com.greenfox.todomysql.entities.Todo;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -1,9 +1,5 @@
 package com.greenfox.todomysql;
 
-import com.greenfox.todomysql.entities.User;
-import com.greenfox.todomysql.repository.TodoRepo;
-import com.greenfox.todomysql.repository.UserRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
