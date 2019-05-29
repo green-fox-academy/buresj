@@ -2,6 +2,7 @@ package com.greenfox.todomysql.controller;
 
 import com.greenfox.todomysql.entities.Todo;
 import com.greenfox.todomysql.entities.User;
+import com.greenfox.todomysql.models.Selector;
 import com.greenfox.todomysql.models.Validator;
 import com.greenfox.todomysql.repository.TodoRepo;
 import com.greenfox.todomysql.repository.UserRepo;
@@ -17,6 +18,7 @@ public class MainController {
     private TodoRepo repo;
     private UserRepo userRepo;
     private Validator val;
+    private Selector sel;
     private User user;
     private long userId;
 
@@ -25,12 +27,13 @@ public class MainController {
         this.repo = repo;
         this.userRepo = userRepo;
         this.val = new Validator(repo, userRepo);
+        this.sel = new Selector(repo);
     }
 
     @GetMapping({"/", "/list"})
-    public String list(Model model, @RequestParam(required = false) String user) {
+    public String list(Model model, @RequestParam String user) {
         model.addAttribute("newTodo", new Todo());
-        model.addAttribute("todos", repo.findAll());
+        model.addAttribute("todos", sel.show(userId));
         return "index";
     }
 
@@ -87,8 +90,9 @@ public class MainController {
     @PostMapping("/test")
     public String use( @ModelAttribute User user) {
         if (val.test(user)) {
-            this.user = user;
-            return "redirect:/?name=" + user.getName();
+            userRepo.findAll();
+            userId = user.getId();
+            return "redirect:/?user=" + user.getName();
         }
         return "redirect:/login";
     }

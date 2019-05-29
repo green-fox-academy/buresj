@@ -33,5 +33,4 @@ public class Validator {
         Predicate<User> psw = u -> u.getName().equals(user.getPassword());
         return users.stream().anyMatch(nam) && users.stream().anyMatch(psw);
     }
-
 }
