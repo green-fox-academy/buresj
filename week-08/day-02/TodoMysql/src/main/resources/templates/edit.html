@@ -5,13 +5,36 @@
     <title>Edit todo</title>
 </head>
 <body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="col-6">
+            <h5 class="card-title">Todo task</h5>
+            <form action="/save" th:object="${updateTodo}" method="POST">
+                <div class="form-group">
+                <label>Task:</label>
+                <input class="form-control" type="text" th:field="*{title}">
+                <label>Urgent(Y/N):</label>
+                <input class="form-control" type="checkbox" th:field="*{urgent}">
+                <label>Asignee:</label>
+                    <select th:field="*{asignee}">
+                        <option th:each="asi : ${asignees}"
+                                th:value="${asi.id}"
+                                th:text="${asi.name}"></option>
+                    </select>
+                <td><input type="submit" class="btn btn-info" value="Update"></td>
+                </div>
+            </form>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
 
-<form action="/save" th:object="${updateTodo}" method="POST">
-    <input type="text" th:field="*{title}">
-    <input type="checkbox" th:field="*{urgent}">
-    <td><input type="submit" class="btn btn-info" value="Update"></td>
-</form>
-<a class="btn btn-warning" href="http://localhost:8080/" role="button">Cancel</a>
+
+
+
 
 </body>
 </html>

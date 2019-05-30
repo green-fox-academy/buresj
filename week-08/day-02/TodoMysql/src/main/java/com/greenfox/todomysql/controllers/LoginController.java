@@ -5,7 +5,6 @@ import com.greenfox.todomysql.models.Selector;
 import com.greenfox.todomysql.models.Validator;
 import com.greenfox.todomysql.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +19,7 @@ public class LoginController {
     private Selector selector;
 
     @Autowired
-    public LoginController (Validator validator, Selector selector, @Qualifier("user") UserRepo userRepo) {
+    public LoginController (Validator validator, Selector selector, UserRepo userRepo) {
         this.validator = validator;
         this.selector = selector;
         this.userRepo = userRepo;
