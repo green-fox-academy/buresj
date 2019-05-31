@@ -39,6 +39,7 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${selectedPost.get().getTitle()}"></h5>
+                    <h6 class="card-subtitle" th:text="${selectedPost.get().getCreated()}"></h6>
                     <p class="card-text" th:text="${selectedPost.get().getContent()}"></p>
                     <a href="/" class="card-link">Go back</a>
                     <a href="#" class="card-link">Delete</a>
@@ -49,7 +50,7 @@
         </div>
         <div class="col">
             <h2>Ranking</h2>
-            <ul class="list-group list-group-flush" th:each="post : ${posts}">
+            <ul class="list-group list-group-flush" th:each="post : ${ordered}">
                 <li class="list-group-item">
                     <span th:text="${post.getVotes()}"></span>
                     <a th:href="@{'/minus/' + ${post.getId()}}"><span>-</span></a>

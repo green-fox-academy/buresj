@@ -28,6 +28,7 @@ public class MainController {
         model.addAttribute("newPost", new Post());
         model.addAttribute("middle", "showAll");
         model.addAttribute("posts", repo.findAll());
+        model.addAttribute("ordered",repo.orderedPosts());
         return "main";
     }
 
