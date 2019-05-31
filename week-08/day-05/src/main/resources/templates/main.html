@@ -29,7 +29,8 @@
         <div class="col" th:if="${middle} == 'showAll'">
             <h2>All posts</h2>
             <ul class="list-group list-group-flush" th:each="post : ${posts}">
-                <li class="list-group-item"> <a th:href="@{'/' + ${post.getId()}}"><span th:text="${post.getTitle()}"></span></a></li>
+                <li class="list-group-item">
+                    <a th:href="@{'/' + ${post.getId()}}"><span th:text="${post.getTitle()}"></span></a></li>
             </ul>
         </div>
         <div class="col" th:if="${middle} == 'showPost'">
@@ -41,13 +42,22 @@
                     <p class="card-text" th:text="${selectedPost.get().getContent()}"></p>
                     <a href="/" class="card-link">Go back</a>
                     <a href="#" class="card-link">Delete</a>
-                    <a href="#" class="card-link">Upvote</a>
-                    <a href="#" class="card-link">Downvote</a>
+                    <a th:href="@{'/plus/' + ${selectedPost.get().getId()}}" class="card-link"><span>Upvote</span></a>
+                    <a th:href="@{'/minus/' + ${selectedPost.get().getId()}}" class="card-link"><span>Downvote</span></a>
                 </div>
             </div>
         </div>
         <div class="col">
             <h2>Ranking</h2>
+            <ul class="list-group list-group-flush" th:each="post : ${posts}">
+                <li class="list-group-item">
+                    <span th:text="${post.getVotes()}"></span>
+                    <a th:href="@{'/minus/' + ${post.getId()}}"><span>-</span></a>
+                    <a th:href="@{'/plus/' + ${post.getId()}}"><span>+</span></a>
+                    <a th:href="@{'/' + ${post.getId()}}"><span th:text="${post.getTitle()}"></span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

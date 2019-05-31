@@ -11,14 +11,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Optional;
+
 @Controller
 public class MainController {
-
-
-    //displayAll
-    //addPost
-    //removePost
-    //vote
 
     private PostsRepo repo;
 
@@ -48,4 +44,21 @@ public class MainController {
         repo.save(post);
         return "redirect:/";
     }
+
+    @GetMapping("/minus/{id}")
+    public String decrement(@PathVariable Integer id){
+        Post post = repo.findById(new Long(id)).get();
+        post.decrement();
+        repo.save(post);
+        return "redirect:/";
+    }
+
+    @GetMapping("/plus/{id}")
+    public String increment(@PathVariable Integer id){
+        Post post = repo.findById(new Long(id)).get();
+        post.increment();
+        repo.save(post);
+        return "redirect:/";
+    }
+
 }

@@ -24,4 +24,11 @@ public class Post {
     private String content;
     private int votes;
 
+    public void decrement(){
+        this.votes--;
+    }
+
+    public void increment(){
+        this.votes++;
+    }
 }
