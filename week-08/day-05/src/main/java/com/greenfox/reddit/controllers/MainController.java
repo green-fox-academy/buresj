@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 public class MainController {
 
     private PostsRepo repo;
+    private String username;
 
     @Autowired
     public MainController(PostsRepo repo){
@@ -23,6 +24,7 @@ public class MainController {
         model.addAttribute("middle", "showAll");
         model.addAttribute("posts", repo.all());
         model.addAttribute("ordered",repo.orderedPosts());
+        this.username = username;
         return "main";
     }
 
@@ -35,24 +37,24 @@ public class MainController {
     }
 
     @PostMapping("/add")
-    public String addPost(@ModelAttribute Post post, @RequestParam(required = false) String username){
+    public String addPost(@ModelAttribute Post post){
         repo.save(post);
-        return "redirect:/" + username;
+        return "redirect:/?username=" + username;
     }
 
     @GetMapping("/minus/{id}")
-    public String decrement(@PathVariable Integer id, @RequestParam(required = false) String username){
+    public String decrement(@PathVariable Integer id){
         Post post = repo.findById(new Long(id)).get();
         post.decrement();
         repo.save(post);
-        return "redirect:/" + username;
+        return "redirect:/?username=" + username;
     }
 
     @GetMapping("/plus/{id}")
-    public String increment(@PathVariable Integer id, @RequestParam(required = false) String username){
+    public String increment(@PathVariable Integer id){
         Post post = repo.findById(new Long(id)).get();
         post.increment();
         repo.save(post);
-        return "redirect:/" + username;
+        return "redirect:/?username=" + username;
     }
 }
