@@ -32,18 +32,16 @@ public class MainController {
         model.addAttribute("newPost", new Post());
         model.addAttribute("middle", "showAll");
         model.addAttribute("posts", repo.findAll());
-
         return "main";
     }
 
-    @GetMapping("/detail/{id}")
-    public String displayPost(Model model, @PathVariable long id){
+    @GetMapping("/{id}")
+    public String displayPost(Model model, @PathVariable Integer id){
         model.addAttribute("newPost", new Post());
         model.addAttribute("middle", "showPost");
-        model.addAttribute("posts", repo.findById(id));
+        model.addAttribute("selectedPost", repo.findById(new Long(id)));
         return "main";
     }
-
 
     @PostMapping("/add")
     public String addPost(@ModelAttribute Post post){

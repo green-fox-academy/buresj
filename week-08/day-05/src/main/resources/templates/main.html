@@ -29,8 +29,22 @@
         <div class="col" th:if="${middle} == 'showAll'">
             <h2>All posts</h2>
             <ul class="list-group list-group-flush" th:each="post : ${posts}">
-                <li class="list-group-item"> <a th:href="@{${post.getId() + '/detail'}}"><span th:text="${post.getTitle()}"></span></a></li>
+                <li class="list-group-item"> <a th:href="@{'/' + ${post.getId()}}"><span th:text="${post.getTitle()}"></span></a></li>
             </ul>
+        </div>
+        <div class="col" th:if="${middle} == 'showPost'">
+            <br>
+            <br>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${selectedPost.get().getTitle()}"></h5>
+                    <p class="card-text" th:text="${selectedPost.get().getContent()}"></p>
+                    <a href="/" class="card-link">Go back</a>
+                    <a href="#" class="card-link">Delete</a>
+                    <a href="#" class="card-link">Upvote</a>
+                    <a href="#" class="card-link">Downvote</a>
+                </div>
+            </div>
         </div>
         <div class="col">
             <h2>Ranking</h2>
