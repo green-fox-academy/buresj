@@ -76,6 +76,8 @@ public class TableController {
     @GetMapping("/asignee")
     public String createA (Model model){
         model.addAttribute("newAsignee", new Asignee());
+        model.addAttribute("asignees", asigneeRepo.findAll());
+        model.addAttribute("todos",repo.findAll());
         return "asignees";
     }
 

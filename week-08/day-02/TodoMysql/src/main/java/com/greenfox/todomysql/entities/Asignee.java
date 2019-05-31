@@ -1,9 +1,6 @@
 package com.greenfox.todomysql.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class Asignee {
@@ -15,7 +12,10 @@ public class Asignee {
     private String name;
     private String email;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinTable(name = "asignee_todo",
+            joinColumns = { @JoinColumn(name = "asignee_id", referencedColumnName = "id") },
+            inverseJoinColumns = { @JoinColumn(name = "todo_id", referencedColumnName = "id") })
     private Todo todo;
 
     public Asignee(){};
@@ -56,5 +56,10 @@ public class Asignee {
 
     public void setTodo(Todo todo) {
         this.todo = todo;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }

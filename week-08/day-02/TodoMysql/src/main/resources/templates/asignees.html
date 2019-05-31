@@ -13,5 +13,39 @@
     <input type="text" th:field="*{email}">
     <input type="submit" class="btn btn-info" value="Save asignee">
 </form>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Tasks</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="asi : ${asignees}">
+        <td th:text="${asi.getName()}"></td>
+        <td th:text="${asi.getEmail()}"></td>
+        <td th:text="${asi.getTodo()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Tasks</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="todo : ${todos}">
+        <td th:text="${todo.getTitle()}"></td>
+        <td th:text="${todo.getAsignee()}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

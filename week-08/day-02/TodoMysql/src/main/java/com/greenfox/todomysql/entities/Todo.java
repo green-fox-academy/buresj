@@ -16,7 +16,7 @@ public class Todo {
     private boolean urgent;
     private boolean done = false;
 
-    @OneToOne
+    @OneToOne (mappedBy = "todo")
     private Asignee asignee;
 
     @CreationTimestamp

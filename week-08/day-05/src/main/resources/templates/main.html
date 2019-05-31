@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Forum</title>
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Forum</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Add new post</h2>
+            <form action="/add" th:object="${newPost}" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" th:field="*{title}" placeholder="Enter title">
+                    <br>
+                    <textarea class="form-control" rows="3" th:field="*{content}" placeholder="Write post"></textarea>
+                </div>
+                <td><input type="submit" class="btn btn-info" value="Post"></td>
+            </form>
+        </div>
+        <div class="col" th:if="${middle} == 'showAll'">
+            <h2>All posts</h2>
+            <ul class="list-group list-group-flush" th:each="post : ${posts}">
+                <li class="list-group-item"> <a th:href="@{${post.getId() + '/detail'}}"><span th:text="${post.getTitle()}"></span></a></li>
+            </ul>
+        </div>
+        <div class="col">
+            <h2>Ranking</h2>
+        </div>
+    </div>
+</div>
+</body>
+</html>
