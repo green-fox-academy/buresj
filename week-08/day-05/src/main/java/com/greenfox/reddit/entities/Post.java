@@ -5,11 +5,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -28,6 +26,9 @@ public class Post {
 
     @CreationTimestamp
     private Date created;
+
+    @ManyToOne
+    private User user;
 
     public void decrement(){
         this.votes--;

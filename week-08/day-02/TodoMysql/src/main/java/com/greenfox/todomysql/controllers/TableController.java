@@ -68,7 +68,8 @@ public class TableController {
     }
 
     @PostMapping("/save")
-    public String save(@ModelAttribute Todo todo) {
+    public String save(@ModelAttribute Todo todo, @ModelAttribute Asignee asignee) {
+
         repo.save(todo);
         return "redirect:/?user=" + userId;
     }

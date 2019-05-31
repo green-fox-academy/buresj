@@ -20,7 +20,7 @@
                 <label>Asignee:</label>
                     <select th:field="*{asignee}">
                         <option th:each="asi : ${asignees}"
-                                th:value="${asi.id}"
+                                th:value="${asi}"
                                 th:text="${asi.name}"></option>
                     </select>
                 <td><input type="submit" class="btn btn-info" value="Update"></td>
