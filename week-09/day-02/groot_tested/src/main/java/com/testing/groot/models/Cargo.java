@@ -1,5 +1,8 @@
 package com.testing.groot.models;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Cargo {
 
     private int caliber25;
@@ -8,12 +11,17 @@ public class Cargo {
     private String shipStatus;
     private boolean ready;
 
+    private String received;
+
+    private int amount;
+
     public Cargo() {
         this.caliber25 = 0;
         this.caliber30 = 0;
         this.caliber50 = 0;
         this.shipStatus = "empty";
         this.ready = false;
+        this.received = null;
     }
 
     public int getCaliber25() {
@@ -54,5 +62,21 @@ public class Cargo {
 
     public void setReady(boolean ready) {
         this.ready = ready;
+    }
+
+    public String getReceived() {
+        return received;
+    }
+
+    public void setReceived(String received) {
+        this.received = received;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }

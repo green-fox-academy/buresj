@@ -1,4 +1,9 @@
 package com.testing.groot.services;
 
-public class CargoService {
+import com.testing.groot.models.CargoStatus;
+
+public interface CargoService {
+
+    void fill (double caliber, int amount);
+    CargoStatus getStatus();
 }
