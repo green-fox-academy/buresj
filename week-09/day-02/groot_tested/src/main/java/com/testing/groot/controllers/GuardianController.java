@@ -1,5 +1,6 @@
 package com.testing.groot.controllers;
 
+import com.testing.groot.models.Arrow;
 import com.testing.groot.models.GrootResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,5 +17,10 @@ public class GuardianController {
                   return new ResponseEntity<>(new GrootResponse(message), HttpStatus.OK);
         }
         return new ResponseEntity<>(new GrootResponse(), HttpStatus.BAD_REQUEST);
+    }
+
+    @GetMapping("/yondu")
+    public ResponseEntity<Arrow> arrow (@RequestParam (required = false) double distance, @RequestParam (required = false) double time) {
+        return new ResponseEntity<>(new Arrow(distance, time),HttpStatus.OK);
     }
 }
