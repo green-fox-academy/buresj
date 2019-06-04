@@ -4,7 +4,6 @@ import com.testing.groot.controllers.GuardianController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -22,14 +21,14 @@ public class GuardianControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void GuardianController_HttpResponseIsOKwithGivenParam() throws Exception {
+    public void GuardianControllerForGroot_HttpResponseIsOKwithGivenParam() throws Exception {
         mockMvc.perform(get("/groot/?message=test"))
                 .andExpect(status()
                         .isOk());
     }
 
     @Test
-    public void GuardianController_GivenParamIsAsExpected() throws Exception {
+    public void GuardianControllerForGroot_GivenParamIsAsExpected() throws Exception {
 
         String content = "{ \n" +
                 "  \"received\": \"test\",\n" +
@@ -44,13 +43,13 @@ public class GuardianControllerTest {
     }
 
     @Test
-    public void GuardianController_HttpResponseWithoutParam() throws Exception {
+    public void GuardianControllerForGroot_HttpResponseWithoutParam() throws Exception {
         mockMvc.perform(get("/groot/"))
                 .andExpect(status().isBadRequest());
     }
 
     @Test
-    public void GuardianController_ErrorResponseReturned() throws Exception {
+    public void GuardianControllerForGroot_ErrorResponseReturned() throws Exception {
 
         String content = "{ \n" +
                 "  \"error\": \"I am groot\"\n" +
@@ -63,4 +62,26 @@ public class GuardianControllerTest {
                 .andExpect(status().isBadRequest());
     }
 
+    @Test
+    public void GuardianControllerForArrow_HttpResponseIsOKwithGivenParam() throws Exception {
+        mockMvc.perform(get("/yondu/?distance=0&time=0"))
+                .andExpect(status()
+                        .isOk());
+    }
+
+    @Test
+    public void GuardianControllerForYondu_GivenParamIsAsExpected() throws Exception {
+
+        String content = "{ \n" +
+                "  \"distance\": \"10.0\",\n" +
+                "  \"time\": \"10.0\"\n" +
+                "  \"speed\": \"100.0\"\n" +
+                "}";
+
+        mockMvc.perform(get("/yondu/?distance=0&time=0")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(content))
+                .andDo(print())
+                .andExpect(status().isOk());
+    }
 }
