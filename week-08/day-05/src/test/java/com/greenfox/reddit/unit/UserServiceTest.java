@@ -3,7 +3,7 @@ package com.greenfox.reddit.unit;
 import com.greenfox.reddit.entities.Post;
 import com.greenfox.reddit.entities.User;
 import com.greenfox.reddit.repositories.UserRepo;
-import com.greenfox.reddit.services.Validator;
+import com.greenfox.reddit.services.UserServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ValidatorTest {
+public class UserServiceTest {
 
     @Test
     public void addingExistingUser() {
@@ -26,11 +26,8 @@ public class ValidatorTest {
                 new User(1, "Name", "password", posts)
         ));
 
-        Validator validator = new Validator(mockRepository);
-
+        UserServiceImpl userServiceImpl = new UserServiceImpl(mockRepository);
         User testUser = new User(1, "Name", "password", posts);
-
-        Assert.assertFalse(validator.test(testUser));
-
+        Assert.assertFalse(userServiceImpl.test(testUser));
     }
 }

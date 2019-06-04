@@ -10,12 +10,12 @@ import java.util.List;
 import java.util.function.Predicate;
 
 @Service
-public class Validator {
+public class UserServiceImpl implements UserService{
 
     private UserRepo repo;
 
     @Autowired
-    public Validator(UserRepo repo) {
+    public UserServiceImpl(UserRepo repo) {
         this.repo = repo;
     }
 
