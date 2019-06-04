@@ -1,5 +1,11 @@
 package com.greenfox.todomysql;
 
+import com.greenfox.todomysql.entities.Assignee;
+import com.greenfox.todomysql.entities.Todo;
+import com.greenfox.todomysql.repositories.AsigneeRepo;
+import com.greenfox.todomysql.repositories.TodoRepo;
+import com.greenfox.todomysql.repositories.UserRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,11 +13,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class TodoMysqlApplication implements CommandLineRunner {
 
-//    @Autowired
-//    TodoRepo repo;
+    @Autowired
+    TodoRepo repo;
 
-/*    @Autowired
-    UserRepo userRepo;*/
+    @Autowired
+    AsigneeRepo asRepo;
+
+    @Autowired
+    UserRepo userRepo;
 
 
     public static void main(String[] args) {
@@ -20,7 +29,14 @@ public class TodoMysqlApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        repo.save(new Todo("Do stuff!", true, false));
-//        repo.save(new Todo("Do more stuff!", false, true ));
+
+        Assignee assignee = new Assignee("John", "email");
+        Todo todo1 = new Todo("a");
+        Todo todo2 = new Todo("b");
+
+        assignee.addTodo(todo1);
+        assignee.addTodo(todo2);
+
+        asRepo.save(assignee);
     }
 }

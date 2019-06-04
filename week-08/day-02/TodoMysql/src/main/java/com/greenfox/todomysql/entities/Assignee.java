@@ -1,9 +1,11 @@
 package com.greenfox.todomysql.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-public class Asignee {
+public class Assignee {
 
     @Id
     @GeneratedValue
@@ -12,18 +14,22 @@ public class Asignee {
     private String name;
     private String email;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinTable(name = "asignee_todo",
-            joinColumns = { @JoinColumn(name = "asignee_id", referencedColumnName = "id") },
-            inverseJoinColumns = { @JoinColumn(name = "todo_id", referencedColumnName = "id") })
-    private Todo todo;
+    @OneToMany(fetch = FetchType.LAZY,  mappedBy = "assignee")
+    private List<Todo> todos;
 
-    public Asignee(){};
+    public Assignee(){
+        this.todos = new ArrayList<>();
+    }
 
-    public Asignee(String name, String email, Todo todo) {
+    public Assignee(String name, String email) {
         this.name = name;
         this.email = email;
-        this.todo = todo;
+        this.todos = new ArrayList<>();
+    }
+
+    public void addTodo(Todo todo){
+
+        this.todos.add(todo);
     }
 
     public long getId() {
@@ -50,16 +56,11 @@ public class Asignee {
         this.email = email;
     }
 
-    public Todo getTodo() {
-        return todo;
-    }
-
-    public void setTodo(Todo todo) {
-        this.todo = todo;
-    }
-
     @Override
     public String toString() {
         return name;
     }
+
+
+
 }

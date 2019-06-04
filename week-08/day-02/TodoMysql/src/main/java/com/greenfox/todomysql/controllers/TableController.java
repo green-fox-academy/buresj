@@ -1,6 +1,5 @@
 package com.greenfox.todomysql.controllers;
-
-import com.greenfox.todomysql.entities.Asignee;
+import com.greenfox.todomysql.entities.Assignee;
 import com.greenfox.todomysql.entities.Todo;
 import com.greenfox.todomysql.models.Selector;
 import com.greenfox.todomysql.repositories.AsigneeRepo;
@@ -48,43 +47,42 @@ public class TableController {
     }
 
     @GetMapping("/{id}/completed")
-    public String complete(Model model, @PathVariable(name = "id") Integer id) {
+    public String complete(Model model, @PathVariable(name = "id") long id) {
         model.addAttribute("newTodo", new Todo());
-        repo.findById(new Long(id)).get().setDone(true);
+        repo.findById(id).get().setDone(true);
         return "redirect:/?user=" + userId;
     }
 
     @GetMapping("/{id}/edit")
-    public String edit(Model model, @PathVariable(name = "id") Integer id) {
-        model.addAttribute("updateTodo", repo.findById(new Long(id)));
+    public String edit(Model model, @PathVariable(name = "id") long id) {
+        model.addAttribute("updateTodo", repo.findById(id));
         model.addAttribute("asignees", asigneeRepo.findAll());
         return "edit";
     }
 
     @GetMapping("/{id}/detail")
     public String detail(Model model, @PathVariable(name = "id") long id) {
-        model.addAttribute("detailTodo", repo.findById(id));
+        model.addAttribute("detailTodo", repo.findById(id).get());
         return "detail";
     }
 
     @PostMapping("/save")
-    public String save(@ModelAttribute Todo todo, @ModelAttribute Asignee asignee) {
-
-        repo.save(todo);
+    public String save(@ModelAttribute Todo updateTodo) {
+        repo.save(updateTodo);
         return "redirect:/?user=" + userId;
     }
 
     @GetMapping("/asignee")
     public String createA (Model model){
-        model.addAttribute("newAsignee", new Asignee());
+        model.addAttribute("newAsignee", new Assignee());
         model.addAttribute("asignees", asigneeRepo.findAll());
         model.addAttribute("todos",repo.findAll());
         return "asignees";
     }
 
     @PostMapping("/adda")
-    public String addA(@ModelAttribute Asignee asignee) {
-        asigneeRepo.save(asignee);
+    public String addA(@ModelAttribute Assignee assignee) {
+        asigneeRepo.save(assignee);
         return "redirect:/?user=" + userId;
     }
 }

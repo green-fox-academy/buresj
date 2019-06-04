@@ -3,6 +3,8 @@ package com.greenfox.todomysql.entities;
 import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Todo {
@@ -16,13 +18,17 @@ public class Todo {
     private boolean urgent;
     private boolean done = false;
 
-    @OneToOne (mappedBy = "todo")
-    private Asignee asignee;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Assignee assignee;
 
     @CreationTimestamp
     private Date created;
 
-    public Todo() {
+    public Todo(){
+    }
+
+    public Todo(String title) {
+        this.title = title;
     }
 
     public void setUserId(long userID) {
@@ -80,12 +86,12 @@ public class Todo {
                 "Done: " + done;
     }
 
-    public Asignee getAsignee() {
-        return asignee;
+
+    public Assignee getAssignee() {
+        return assignee;
     }
 
-    public void setAsignee(Asignee asignee) {
-        this.asignee = asignee;
+    public void setAssignee(Assignee assignee) {
+        this.assignee = assignee;
     }
-
 }

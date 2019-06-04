@@ -3,7 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add asignee</title>
+    <title>Add assignee</title>
 </head>
 <body>
 <form action="#" th:action="@{/adda}" th:object="${newAsignee}" method="POST">
@@ -11,7 +11,7 @@
     <input type="text" th:field="*{name}">
     <label>Email</label>
     <input type="text" th:field="*{email}">
-    <input type="submit" class="btn btn-info" value="Save asignee">
+    <input type="submit" class="btn btn-info" value="Save assignee">
 </form>
 
 <table class="table">

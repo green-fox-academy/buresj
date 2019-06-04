@@ -14,15 +14,10 @@
             <form action="/save" th:object="${updateTodo}" method="POST">
                 <div class="form-group">
                 <label>Task:</label>
+                    <input type="hidden" th:field="*{id}">
                 <input class="form-control" type="text" th:field="*{title}">
                 <label>Urgent(Y/N):</label>
                 <input class="form-control" type="checkbox" th:field="*{urgent}">
-                <label>Asignee:</label>
-                    <select th:field="*{asignee}">
-                        <option th:each="asi : ${asignees}"
-                                th:value="${asi}"
-                                th:text="${asi.name}"></option>
-                    </select>
                 <td><input type="submit" class="btn btn-info" value="Update"></td>
                 </div>
             </form>
