@@ -1,7 +1,7 @@
 package com.greenfox.reddit.controllers;
 
 import com.greenfox.reddit.entities.User;
-import com.greenfox.reddit.models.Validator;
+import com.greenfox.reddit.services.Validator;
 import com.greenfox.reddit.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

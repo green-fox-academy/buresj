@@ -1,4 +1,4 @@
-package com.greenfox.reddit.models;
+package com.greenfox.reddit.services;
 
 import com.greenfox.reddit.entities.User;
 import com.greenfox.reddit.repositories.UserRepo;
