@@ -22,7 +22,7 @@ public class GuardianControllerTest {
 
     @Test
     public void GuardianControllerForGroot_HttpResponseIsOKwithGivenParam() throws Exception {
-        mockMvc.perform(get("/groot/?message=test"))
+        mockMvc.perform(get("/askGroot/?message=test"))
                 .andExpect(status()
                         .isOk());
     }
@@ -32,10 +32,10 @@ public class GuardianControllerTest {
 
         String content = "{ \n" +
                 "  \"received\": \"test\",\n" +
-                "  \"translated\": \"I am groot\"\n" +
+                "  \"translated\": \"I am askGroot\"\n" +
                 "}";
 
-        mockMvc.perform(get("/groot/?message=test")
+        mockMvc.perform(get("/askGroot/?message=test")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(content))
                     .andDo(print())
@@ -44,7 +44,7 @@ public class GuardianControllerTest {
 
     @Test
     public void GuardianControllerForGroot_HttpResponseWithoutParam() throws Exception {
-        mockMvc.perform(get("/groot/"))
+        mockMvc.perform(get("/askGroot/"))
                 .andExpect(status().isBadRequest());
     }
 
@@ -52,10 +52,10 @@ public class GuardianControllerTest {
     public void GuardianControllerForGroot_ErrorResponseReturned() throws Exception {
 
         String content = "{ \n" +
-                "  \"error\": \"I am groot\"\n" +
+                "  \"error\": \"I am askGroot\"\n" +
                 "}";
 
-        mockMvc.perform(get("/groot/")
+        mockMvc.perform(get("/askGroot/")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(content))
                 .andDo(print())

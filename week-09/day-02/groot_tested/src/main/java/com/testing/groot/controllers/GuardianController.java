@@ -1,6 +1,7 @@
 package com.testing.groot.controllers;
 
 import com.testing.groot.models.Arrow;
+import com.testing.groot.models.Cargo;
 import com.testing.groot.models.GrootResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GuardianController {
 
     @GetMapping("/groot")
-    public ResponseEntity<GrootResponse> groot(@RequestParam (required = false) String message) {
+    public ResponseEntity<GrootResponse> askGroot(@RequestParam (required = false) String message) {
         if (message != null) {
                   return new ResponseEntity<>(new GrootResponse(message), HttpStatus.OK);
         }
@@ -20,7 +21,12 @@ public class GuardianController {
     }
 
     @GetMapping("/yondu")
-    public ResponseEntity<Arrow> arrow (@RequestParam (required = false) double distance, @RequestParam (required = false) double time) {
+    public ResponseEntity<Arrow> fireArrow(@RequestParam (required = false) double distance, @RequestParam (required = false) double time) {
         return new ResponseEntity<>(new Arrow(distance, time),HttpStatus.OK);
+    }
+
+    @GetMapping("/rocket")
+    public ResponseEntity<Cargo> displayShip() {
+        
     }
 }
