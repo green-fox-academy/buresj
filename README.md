@@ -1,8 +1,10 @@
 
 # REPOSITORIES
 
-## [Todo App 2.0 (v.24.5./SpringBoot)](https://github.com/buresj/ToDoApp2.0)
+## [Todo App 2.0 (Java/Spring)](https://github.com/buresj/ToDoApp2.0)
 
-## [Wanderer game](https://github.com/buresj/wanderer-java)
+## [Orientation exam](https://github.com/buresj/ferrilata-orientation-normal-exam)
 
-## [Personal Web (Jekyll/Ruby)](https://github.com/buresj/buresj.github.io)
+## [Foundation exam](https://github.com/buresj/ferrilata-foundation-normal-exam)
+
+## [Sociologikon](https://buresj.github.io/sociologikon/)
